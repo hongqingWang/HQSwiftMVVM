@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		180EB8BC1F0D1F4A00C86ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8BB1F0D1F4A00C86ADE /* AppDelegate.swift */; };
 		180EB8C31F0D1F4A00C86ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180EB8C21F0D1F4A00C86ADE /* Assets.xcassets */; };
+		180EB8D81F0D274200C86ADE /* HQMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8D71F0D274200C86ADE /* HQMainViewController.swift */; };
+		180EB8DA1F0D279700C86ADE /* HQNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8D91F0D279700C86ADE /* HQNavigationController.swift */; };
+		180EB8DC1F0D27B800C86ADE /* HQBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8DB1F0D27B800C86ADE /* HQBaseViewController.swift */; };
+		180EB8DE1F0D289D00C86ADE /* HQAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8DD1F0D289D00C86ADE /* HQAViewController.swift */; };
+		180EB8E01F0D28B000C86ADE /* HQBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8DF1F0D28B000C86ADE /* HQBViewController.swift */; };
+		180EB8E21F0D28B900C86ADE /* HQCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8E11F0D28B900C86ADE /* HQCViewController.swift */; };
+		180EB8E41F0D28C300C86ADE /* HQDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8E31F0D28C300C86ADE /* HQDViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +23,13 @@
 		180EB8BB1F0D1F4A00C86ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		180EB8C21F0D1F4A00C86ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		180EB8C71F0D1F4A00C86ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		180EB8D71F0D274200C86ADE /* HQMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQMainViewController.swift; sourceTree = "<group>"; };
+		180EB8D91F0D279700C86ADE /* HQNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQNavigationController.swift; sourceTree = "<group>"; };
+		180EB8DB1F0D27B800C86ADE /* HQBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQBaseViewController.swift; sourceTree = "<group>"; };
+		180EB8DD1F0D289D00C86ADE /* HQAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQAViewController.swift; sourceTree = "<group>"; };
+		180EB8DF1F0D28B000C86ADE /* HQBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQBViewController.swift; sourceTree = "<group>"; };
+		180EB8E11F0D28B900C86ADE /* HQCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQCViewController.swift; sourceTree = "<group>"; };
+		180EB8E31F0D28C300C86ADE /* HQDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQDViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,11 +62,98 @@
 		180EB8BA1F0D1F4A00C86ADE /* HQSwiftMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				180EB8CD1F0D26D700C86ADE /* Classes */,
 				180EB8BB1F0D1F4A00C86ADE /* AppDelegate.swift */,
 				180EB8C21F0D1F4A00C86ADE /* Assets.xcassets */,
 				180EB8C71F0D1F4A00C86ADE /* Info.plist */,
 			);
 			path = HQSwiftMVVM;
+			sourceTree = "<group>";
+		};
+		180EB8CD1F0D26D700C86ADE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				180EB8CE1F0D26D700C86ADE /* Model */,
+				180EB8D01F0D26D700C86ADE /* View */,
+				180EB8D61F0D26D700C86ADE /* ViewModel */,
+				180EB8CF1F0D26D700C86ADE /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		180EB8CE1F0D26D700C86ADE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		180EB8CF1F0D26D700C86ADE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		180EB8D01F0D26D700C86ADE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				180EB8D51F0D26D700C86ADE /* Main */,
+				180EB8D11F0D26D700C86ADE /* A */,
+				180EB8D21F0D26D700C86ADE /* B */,
+				180EB8D31F0D26D700C86ADE /* C */,
+				180EB8D41F0D26D700C86ADE /* D */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		180EB8D11F0D26D700C86ADE /* A */ = {
+			isa = PBXGroup;
+			children = (
+				180EB8DD1F0D289D00C86ADE /* HQAViewController.swift */,
+			);
+			path = A;
+			sourceTree = "<group>";
+		};
+		180EB8D21F0D26D700C86ADE /* B */ = {
+			isa = PBXGroup;
+			children = (
+				180EB8DF1F0D28B000C86ADE /* HQBViewController.swift */,
+			);
+			path = B;
+			sourceTree = "<group>";
+		};
+		180EB8D31F0D26D700C86ADE /* C */ = {
+			isa = PBXGroup;
+			children = (
+				180EB8E11F0D28B900C86ADE /* HQCViewController.swift */,
+			);
+			path = C;
+			sourceTree = "<group>";
+		};
+		180EB8D41F0D26D700C86ADE /* D */ = {
+			isa = PBXGroup;
+			children = (
+				180EB8E31F0D28C300C86ADE /* HQDViewController.swift */,
+			);
+			path = D;
+			sourceTree = "<group>";
+		};
+		180EB8D51F0D26D700C86ADE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				180EB8D71F0D274200C86ADE /* HQMainViewController.swift */,
+				180EB8D91F0D279700C86ADE /* HQNavigationController.swift */,
+				180EB8DB1F0D27B800C86ADE /* HQBaseViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		180EB8D61F0D26D700C86ADE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -81,6 +182,7 @@
 		180EB8B01F0D1F4A00C86ADE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HQ;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "王红庆";
@@ -125,6 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180EB8DE1F0D289D00C86ADE /* HQAViewController.swift in Sources */,
+				180EB8DC1F0D27B800C86ADE /* HQBaseViewController.swift in Sources */,
+				180EB8E21F0D28B900C86ADE /* HQCViewController.swift in Sources */,
+				180EB8E01F0D28B000C86ADE /* HQBViewController.swift in Sources */,
+				180EB8D81F0D274200C86ADE /* HQMainViewController.swift in Sources */,
+				180EB8DA1F0D279700C86ADE /* HQNavigationController.swift in Sources */,
+				180EB8E41F0D28C300C86ADE /* HQDViewController.swift in Sources */,
 				180EB8BC1F0D1F4A00C86ADE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
