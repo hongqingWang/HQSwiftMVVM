@@ -8,19 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		180EB8BC1F0D1F4A00C86ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8BB1F0D1F4A00C86ADE /* AppDelegate.swift */; };
-		180EB8BE1F0D1F4A00C86ADE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8BD1F0D1F4A00C86ADE /* ViewController.swift */; };
-		180EB8C11F0D1F4A00C86ADE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180EB8BF1F0D1F4A00C86ADE /* Main.storyboard */; };
 		180EB8C31F0D1F4A00C86ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180EB8C21F0D1F4A00C86ADE /* Assets.xcassets */; };
-		180EB8C61F0D1F4A00C86ADE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 180EB8C41F0D1F4A00C86ADE /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		180EB8B81F0D1F4A00C86ADE /* HQSwiftMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HQSwiftMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		180EB8BB1F0D1F4A00C86ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		180EB8BD1F0D1F4A00C86ADE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		180EB8C01F0D1F4A00C86ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		180EB8C21F0D1F4A00C86ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		180EB8C51F0D1F4A00C86ADE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		180EB8C71F0D1F4A00C86ADE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,10 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				180EB8BB1F0D1F4A00C86ADE /* AppDelegate.swift */,
-				180EB8BD1F0D1F4A00C86ADE /* ViewController.swift */,
-				180EB8BF1F0D1F4A00C86ADE /* Main.storyboard */,
 				180EB8C21F0D1F4A00C86ADE /* Assets.xcassets */,
-				180EB8C41F0D1F4A00C86ADE /* LaunchScreen.storyboard */,
 				180EB8C71F0D1F4A00C86ADE /* Info.plist */,
 			);
 			path = HQSwiftMVVM;
@@ -123,9 +114,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180EB8C61F0D1F4A00C86ADE /* LaunchScreen.storyboard in Resources */,
 				180EB8C31F0D1F4A00C86ADE /* Assets.xcassets in Resources */,
-				180EB8C11F0D1F4A00C86ADE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,31 +125,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180EB8BE1F0D1F4A00C86ADE /* ViewController.swift in Sources */,
 				180EB8BC1F0D1F4A00C86ADE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		180EB8BF1F0D1F4A00C86ADE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				180EB8C01F0D1F4A00C86ADE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		180EB8C41F0D1F4A00C86ADE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				180EB8C51F0D1F4A00C86ADE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		180EB8C81F0D1F4A00C86ADE /* Debug */ = {
@@ -260,7 +229,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HQSwiftMVVM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HNAGroup.Unicare.HQSwiftMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -272,7 +243,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = HQSwiftMVVM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.HNAGroup.Unicare.HQSwiftMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -299,6 +272,7 @@
 				180EB8CC1F0D1F4A00C86ADE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
