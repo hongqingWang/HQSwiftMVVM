@@ -12,7 +12,7 @@ class HQMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        /// 'setupChildControllers' is inaccessible due to 'private' protection level
         setupChildControllers()
     }
 }
@@ -25,25 +25,43 @@ extension HQMainViewController {
     
     
     /// 设置所有子控制器
-    func setupChildControllers() {
+    fileprivate func setupChildControllers() {
         
+        let array = [
+            ["className": "HQAViewController", "title": "首页", "imageName": ""]
+        ]
+        var arrayM = [UIViewController]()
+        for dict in array {
+            arrayM.append(controller(dict: dict))
+        }
+        viewControllers = arrayM
     }
-    
+    /*
+     ## 关于 fileprvita 和 private
+     
+     - 在`swift 3.0`，新增加了一个`fileprivate`，这个元素的访问权限为文件内私有
+     - 过去的`private`相当于现在的`fileprivate`
+     - 现在的`private`是真正的私有，离开了这个类或者结构体的作用域外面就无法访问了
+     */
     
     /// 使用字典创建一个子控制器
     ///
     /// - Parameter dict: 信息字典[className, title, imageName]
     /// - Returns: 子控制器
-//    func controller(dict: [String: String]) -> UIViewController {
-//        
-//        // 1. 获取字典内容
-//        guard let className = dict["className"],
-//            let title = dict["title"],
-//            let imageName = dict["imageName"] else {
-//                
-//                return UIViewController()
-//        }
-//        // 2. 创建视图控制器
-//        
-//    }
+    private func controller(dict: [String: String]) -> UIViewController {
+        
+        // 1. 获取字典内容
+        guard let className = dict["className"],
+            let title = dict["title"],
+            let imageName = dict["imageName"],
+            let cls = NSClassFromString(Bundle.main.namespace + "." + className) as? UIViewController.Type else {
+                
+                return UIViewController()
+        }
+        // 2. 创建视图控制器
+        let vc = cls.init()
+        vc.title = title
+        let nav = HQNavigationController(rootViewController: vc)
+        return nav
+    }
 }
