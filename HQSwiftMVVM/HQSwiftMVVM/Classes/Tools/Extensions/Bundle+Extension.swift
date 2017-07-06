@@ -6,7 +6,7 @@
 //  Copyright © 2017年 王红庆. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Bundle {
     

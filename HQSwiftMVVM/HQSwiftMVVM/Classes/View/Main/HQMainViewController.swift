@@ -12,9 +12,21 @@ class HQMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /// 'setupChildControllers' is inaccessible due to 'private' protection level
+        
         setupChildControllers()
+        setupComposeButton()
     }
+    
+    // MARK: - 监听方法
+    // FIXME: 没有实现
+    // @objc 允许这个函数在运行时通过`OC`消息的消息机制被调用
+    @objc fileprivate func composeStatus() {
+        print("点击加号按钮")
+    }
+    
+    // MARK: - 撰写按钮
+    fileprivate lazy var composeButton = UIButton(hq_imageName: "tabbar_compose_icon_add",
+                                              backImageName: "tabbar_compose_button")
 }
 
 /*
@@ -23,6 +35,18 @@ class HQMainViewController: UITabBarController {
  */
 extension HQMainViewController {
     
+    /// 设置撰写按钮
+    fileprivate func setupComposeButton() {
+        tabBar.addSubview(composeButton)
+        
+        // 设置按钮的位置
+        let count = CGFloat(childViewControllers.count)
+        // 减`1`是为了是按钮变宽,覆盖住系统的容错点
+        let w = tabBar.bounds.size.width / count - 1
+        composeButton.frame = tabBar.bounds.insetBy(dx: w * 2, dy: 0)
+        
+        composeButton.addTarget(self, action: #selector(composeStatus), for: .touchUpInside)
+    }
     
     /// 设置所有子控制器
     fileprivate func setupChildControllers() {
@@ -30,6 +54,7 @@ extension HQMainViewController {
         let array = [
             ["className": "HQAViewController", "title": "首页", "imageName": "a"],
             ["className": "HQBViewController", "title": "消息", "imageName": "b"],
+            ["className": "UIViewController"],
             ["className": "HQCViewController", "title": "发现", "imageName": "c"],
             ["className": "HQDViewController", "title": "我", "imageName": "d"]
         ]
@@ -51,7 +76,7 @@ extension HQMainViewController {
     ///
     /// - Parameter dict: 信息字典[className, title, imageName]
     /// - Returns: 子控制器
-    private func controller(dict: [String: String]) -> UIViewController {
+    fileprivate func controller(dict: [String: String]) -> UIViewController {
         
         // 1. 获取字典内容
         guard let className = dict["className"],
