@@ -15,7 +15,8 @@ class HQAViewController: HQBaseViewController {
         
     }
     
-    @objc func showFriends() {
+    @objc fileprivate func showFriends() {
+        print(#function)
         let vc = HQDemoViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -24,6 +25,8 @@ class HQAViewController: HQBaseViewController {
 
 extension HQAViewController {
     
+    
+    /// 重写父类的方法
     override func setupUI() {
         super.setupUI()
     

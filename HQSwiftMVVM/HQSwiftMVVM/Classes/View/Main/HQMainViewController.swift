@@ -23,7 +23,7 @@ class HQMainViewController: UITabBarController {
     @objc fileprivate func composeStatus() {
         print("点击加号按钮")
     }
-    
+
     // MARK: - 撰写按钮
     fileprivate lazy var composeButton = UIButton(hq_imageName: "tabbar_compose_icon_add",
                                               backImageName: "tabbar_compose_button")

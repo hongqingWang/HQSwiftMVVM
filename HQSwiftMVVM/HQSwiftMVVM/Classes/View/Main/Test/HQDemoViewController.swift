@@ -12,24 +12,24 @@ class HQDemoViewController: HQBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        title = "第\(navigationController?.childViewControllers.count ?? 0)个"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc fileprivate func showNext() {
+        
+        let vc = HQDemoViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
-    */
+}
 
+extension HQDemoViewController {
+    
+    override func setupUI() {
+        
+        /// 重新父类的方法是因为父类的方法不能满足我们的需求,但是一定要调用一下父类的方法`super.setupUI()`
+        super.setupUI()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(showNext))
+    }
 }
