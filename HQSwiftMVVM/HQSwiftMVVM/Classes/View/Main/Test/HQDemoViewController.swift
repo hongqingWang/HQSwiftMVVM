@@ -31,8 +31,9 @@ extension HQDemoViewController {
         super.setupUI()
         
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(showNext))
-        let btn = UIButton(hq_title: "下一个", normalColor: UIColor.lightGray, highlightedColor: UIColor.orange)
-        btn.addTarget(self, action: #selector(showNext), for: .touchUpInside)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
+//        let btn = UIButton(hq_title: "下一个", normalColor: UIColor.lightGray, highlightedColor: UIColor.orange)
+//        btn.addTarget(self, action: #selector(showNext), for: .touchUpInside)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(hq_title: "下一个", target: self, action: #selector(showNext))
     }
 }

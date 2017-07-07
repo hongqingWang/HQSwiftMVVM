@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     
-    /// 便利构造函数
+    /// 图片+背景图片
     ///
     /// - Parameters:
     ///   - imageName: 图像名称
@@ -30,6 +30,14 @@ extension UIButton {
         sizeToFit()
     }
     
+    
+    /// 标题+字体颜色
+    ///
+    /// - Parameters:
+    ///   - hq_title: 标题
+    ///   - fontSize: 字号(optional)
+    ///   - normalColor: normalColor
+    ///   - highlightedColor: highlightedColor
     convenience init(hq_title: String, fontSize: CGFloat = 16, normalColor: UIColor, highlightedColor: UIColor) {
         self.init()
         
