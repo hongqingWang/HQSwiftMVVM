@@ -18,6 +18,7 @@
 		180EB8E01F0D28B000C86ADE /* HQBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8DF1F0D28B000C86ADE /* HQBViewController.swift */; };
 		180EB8E21F0D28B900C86ADE /* HQCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8E11F0D28B900C86ADE /* HQCViewController.swift */; };
 		180EB8E41F0D28C300C86ADE /* HQDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8E31F0D28C300C86ADE /* HQDViewController.swift */; };
+		18CD67821F0F198E00C80A78 /* HQDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		180EB8DF1F0D28B000C86ADE /* HQBViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQBViewController.swift; sourceTree = "<group>"; };
 		180EB8E11F0D28B900C86ADE /* HQCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQCViewController.swift; sourceTree = "<group>"; };
 		180EB8E31F0D28C300C86ADE /* HQDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQDViewController.swift; sourceTree = "<group>"; };
+		18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQDemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		180EB8D51F0D26D700C86ADE /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				18CD67801F0F191300C80A78 /* Test */,
 				180EB8D71F0D274200C86ADE /* HQMainViewController.swift */,
 				180EB8D91F0D279700C86ADE /* HQNavigationController.swift */,
 				180EB8DB1F0D27B800C86ADE /* HQBaseViewController.swift */,
@@ -168,6 +171,14 @@
 				1805E4BB1F0E26AA00532C45 /* HQButton+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18CD67801F0F191300C80A78 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 			files = (
 				180EB8DE1F0D289D00C86ADE /* HQAViewController.swift in Sources */,
 				1805E4B81F0E0C9400532C45 /* Bundle+Extension.swift in Sources */,
+				18CD67821F0F198E00C80A78 /* HQDemoViewController.swift in Sources */,
 				180EB8DC1F0D27B800C86ADE /* HQBaseViewController.swift in Sources */,
 				180EB8E21F0D28B900C86ADE /* HQCViewController.swift in Sources */,
 				180EB8E01F0D28B000C86ADE /* HQBViewController.swift in Sources */,
