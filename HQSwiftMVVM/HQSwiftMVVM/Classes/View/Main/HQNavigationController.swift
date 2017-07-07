@@ -9,7 +9,13 @@
 import UIKit
 
 class HQNavigationController: UINavigationController {
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationBar.isHidden = true
+    }
+    
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
         
         if childViewControllers.count > 0 {

@@ -20,6 +20,8 @@
 		18CD67A21F0F5D9300C80A78 /* HQBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A11F0F5D9300C80A78 /* HQBundle.swift */; };
 		18CD67A41F0F5DC700C80A78 /* HQButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A31F0F5DC700C80A78 /* HQButton.swift */; };
 		18CD67A61F0F5E4100C80A78 /* HQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A51F0F5E4100C80A78 /* HQBarButtonItem.swift */; };
+		18CD67A81F0F686C00C80A78 /* HQScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A71F0F686C00C80A78 /* HQScreen.swift */; };
+		18CD67AA1F0F693500C80A78 /* HQColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A91F0F693500C80A78 /* HQColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		18CD67A11F0F5D9300C80A78 /* HQBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQBundle.swift; sourceTree = "<group>"; };
 		18CD67A31F0F5DC700C80A78 /* HQButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQButton.swift; sourceTree = "<group>"; };
 		18CD67A51F0F5E4100C80A78 /* HQBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQBarButtonItem.swift; sourceTree = "<group>"; };
+		18CD67A71F0F686C00C80A78 /* HQScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQScreen.swift; sourceTree = "<group>"; };
+		18CD67A91F0F693500C80A78 /* HQColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 				18CD67A11F0F5D9300C80A78 /* HQBundle.swift */,
 				18CD67A31F0F5DC700C80A78 /* HQButton.swift */,
 				18CD67A51F0F5E4100C80A78 /* HQBarButtonItem.swift */,
+				18CD67A71F0F686C00C80A78 /* HQScreen.swift */,
+				18CD67A91F0F693500C80A78 /* HQColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			files = (
 				18CD67A21F0F5D9300C80A78 /* HQBundle.swift in Sources */,
 				180EB8DE1F0D289D00C86ADE /* HQAViewController.swift in Sources */,
+				18CD67AA1F0F693500C80A78 /* HQColor.swift in Sources */,
 				18CD67A41F0F5DC700C80A78 /* HQButton.swift in Sources */,
+				18CD67A81F0F686C00C80A78 /* HQScreen.swift in Sources */,
 				18CD67821F0F198E00C80A78 /* HQDemoViewController.swift in Sources */,
 				180EB8DC1F0D27B800C86ADE /* HQBaseViewController.swift in Sources */,
 				180EB8E21F0D28B900C86ADE /* HQCViewController.swift in Sources */,

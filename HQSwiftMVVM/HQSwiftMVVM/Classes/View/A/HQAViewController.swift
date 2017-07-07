@@ -22,7 +22,6 @@ class HQAViewController: HQBaseViewController {
     }
 }
 
-
 extension HQAViewController {
     
     /// 重写父类的方法
