@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1805E4B81F0E0C9400532C45 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805E4B71F0E0C9400532C45 /* Bundle+Extension.swift */; };
-		1805E4BC1F0E26AA00532C45 /* HQButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1805E4BB1F0E26AA00532C45 /* HQButton+Extension.swift */; };
 		180EB8BC1F0D1F4A00C86ADE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8BB1F0D1F4A00C86ADE /* AppDelegate.swift */; };
 		180EB8C31F0D1F4A00C86ADE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 180EB8C21F0D1F4A00C86ADE /* Assets.xcassets */; };
 		180EB8D81F0D274200C86ADE /* HQMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8D71F0D274200C86ADE /* HQMainViewController.swift */; };
@@ -19,11 +17,12 @@
 		180EB8E21F0D28B900C86ADE /* HQCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8E11F0D28B900C86ADE /* HQCViewController.swift */; };
 		180EB8E41F0D28C300C86ADE /* HQDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180EB8E31F0D28C300C86ADE /* HQDViewController.swift */; };
 		18CD67821F0F198E00C80A78 /* HQDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */; };
+		18CD67A21F0F5D9300C80A78 /* HQBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A11F0F5D9300C80A78 /* HQBundle.swift */; };
+		18CD67A41F0F5DC700C80A78 /* HQButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A31F0F5DC700C80A78 /* HQButton.swift */; };
+		18CD67A61F0F5E4100C80A78 /* HQBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A51F0F5E4100C80A78 /* HQBarButtonItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1805E4B71F0E0C9400532C45 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
-		1805E4BB1F0E26AA00532C45 /* HQButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HQButton+Extension.swift"; sourceTree = "<group>"; };
 		180EB8B81F0D1F4A00C86ADE /* HQSwiftMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HQSwiftMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		180EB8BB1F0D1F4A00C86ADE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		180EB8C21F0D1F4A00C86ADE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -36,6 +35,9 @@
 		180EB8E11F0D28B900C86ADE /* HQCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQCViewController.swift; sourceTree = "<group>"; };
 		180EB8E31F0D28C300C86ADE /* HQDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQDViewController.swift; sourceTree = "<group>"; };
 		18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQDemoViewController.swift; sourceTree = "<group>"; };
+		18CD67A11F0F5D9300C80A78 /* HQBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQBundle.swift; sourceTree = "<group>"; };
+		18CD67A31F0F5DC700C80A78 /* HQButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQButton.swift; sourceTree = "<group>"; };
+		18CD67A51F0F5E4100C80A78 /* HQBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQBarButtonItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,8 +169,9 @@
 		180EB8E51F0D2F3800C86ADE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1805E4B71F0E0C9400532C45 /* Bundle+Extension.swift */,
-				1805E4BB1F0E26AA00532C45 /* HQButton+Extension.swift */,
+				18CD67A11F0F5D9300C80A78 /* HQBundle.swift */,
+				18CD67A31F0F5DC700C80A78 /* HQButton.swift */,
+				18CD67A51F0F5E4100C80A78 /* HQBarButtonItem.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,16 +255,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CD67A21F0F5D9300C80A78 /* HQBundle.swift in Sources */,
 				180EB8DE1F0D289D00C86ADE /* HQAViewController.swift in Sources */,
-				1805E4B81F0E0C9400532C45 /* Bundle+Extension.swift in Sources */,
+				18CD67A41F0F5DC700C80A78 /* HQButton.swift in Sources */,
 				18CD67821F0F198E00C80A78 /* HQDemoViewController.swift in Sources */,
 				180EB8DC1F0D27B800C86ADE /* HQBaseViewController.swift in Sources */,
 				180EB8E21F0D28B900C86ADE /* HQCViewController.swift in Sources */,
 				180EB8E01F0D28B000C86ADE /* HQBViewController.swift in Sources */,
 				180EB8D81F0D274200C86ADE /* HQMainViewController.swift in Sources */,
 				180EB8DA1F0D279700C86ADE /* HQNavigationController.swift in Sources */,
+				18CD67A61F0F5E4100C80A78 /* HQBarButtonItem.swift in Sources */,
 				180EB8E41F0D28C300C86ADE /* HQDViewController.swift in Sources */,
-				1805E4BC1F0E26AA00532C45 /* HQButton+Extension.swift in Sources */,
 				180EB8BC1F0D1F4A00C86ADE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

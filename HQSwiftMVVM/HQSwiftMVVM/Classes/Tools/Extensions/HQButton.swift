@@ -1,8 +1,8 @@
 //
-//  HQButton+Extension.swift
+//  HQButton.swift
 //  HQSwiftMVVM
 //
-//  Created by 王红庆 on 2017/7/6.
+//  Created by 王红庆 on 2017/7/7.
 //  Copyright © 2017年 王红庆. All rights reserved.
 //
 
@@ -15,7 +15,6 @@ extension UIButton {
     /// - Parameters:
     ///   - imageName: 图像名称
     ///   - backImageName: 背景图像名称
-    /// - 备注：如果图像名称使用 "" 会抱错误 CUICatalog: Invalid asset name supplied:
     convenience init(hq_imageName: String, backImageName: String?) {
         self.init()
         
@@ -28,6 +27,18 @@ extension UIButton {
         }
         
         // 根据背景图片大小调整尺寸
+        sizeToFit()
+    }
+    
+    convenience init(hq_title: String, fontSize: CGFloat = 16, normalColor: UIColor, highlightedColor: UIColor) {
+        self.init()
+        
+        setTitle(hq_title, for: .normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        setTitleColor(normalColor, for: .normal)
+        setTitleColor(highlightedColor, for: .highlighted)
+        
+        // 注意: 这里不写`sizeToFit()`那么`Button`就显示不出来
         sizeToFit()
     }
     
@@ -70,9 +81,10 @@ extension UIButton {
     //
     //        // 设置背景颜色
     //        backgroundColor = backColor
-    //        
+    //
     //        titleLabel?.font = UIFont.systemFontOfSize(fontSize)
-    //        
+    //
     //        sizeToFit()
     //    }
 }
+

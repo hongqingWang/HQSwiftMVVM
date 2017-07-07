@@ -30,6 +30,9 @@ extension HQDemoViewController {
         /// 重新父类的方法是因为父类的方法不能满足我们的需求,但是一定要调用一下父类的方法`super.setupUI()`
         super.setupUI()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(showNext))
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "下一个", style: .plain, target: self, action: #selector(showNext))
+        let btn = UIButton(hq_title: "下一个", normalColor: UIColor.lightGray, highlightedColor: UIColor.orange)
+        btn.addTarget(self, action: #selector(showNext), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btn)
     }
 }

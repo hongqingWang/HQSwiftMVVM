@@ -29,7 +29,11 @@ extension HQAViewController {
     /// 重写父类的方法
     override func setupUI() {
         super.setupUI()
-    
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
+        
+        let btn = UIButton(hq_title: "好友", normalColor: UIColor.lightGray, highlightedColor: UIColor.orange)
+        btn.addTarget(self, action: #selector(showFriends), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btn)
+        
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "好友", style: .plain, target: self, action: #selector(showFriends))
     }
 }
