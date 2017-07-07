@@ -30,6 +30,6 @@ extension HQDemoViewController {
         /// 重新父类的方法是因为父类的方法不能满足我们的需求,但是一定要调用一下父类的方法`super.setupUI()`
         super.setupUI()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(hq_title: "下一个", target: self, action: #selector(showNext))
+        navItem.rightBarButtonItem = UIBarButtonItem(hq_title: "下一个", target: self, action: #selector(showNext))
     }
 }
