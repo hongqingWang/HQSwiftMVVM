@@ -21,6 +21,12 @@ class HQBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
+         取消自动缩进,当导航栏遇到`scrollView`的时候,一般都要设置这个属性
+         默认是`true`,会使`scrollView`向下移动`20`个点
+         */
+        automaticallyAdjustsScrollViewInsets = false
+        
         setupUI()
         loadData()
     }
@@ -55,6 +61,11 @@ extension HQBaseViewController {
         // 设置数据源和代理,子类可以直接实现数据源方法
         tableView?.dataSource = self
         tableView?.delegate = self
+        
+        tableView?.contentInset = UIEdgeInsets(top: navigationBar.bounds.height,
+                                               left: 0,
+                                               bottom: tabBarController?.tabBar.bounds.height ?? 49,
+                                               right: 0)
     }
     
     /// 设置导航条

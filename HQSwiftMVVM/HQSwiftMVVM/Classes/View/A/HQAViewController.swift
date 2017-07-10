@@ -13,17 +13,17 @@ fileprivate let cellId = "cellId"
 class HQAViewController: HQBaseViewController {
 
     fileprivate lazy var statusList = [String]()
-    
+
     /// 加载数据
     override func loadData() {
         
-        for i in 0..<10 {
+        for i in 0..<15 {
             statusList.insert(i.description, at: 0)
         }
     }
     
     @objc fileprivate func showFriends() {
-        print(#function)
+        
         let vc = HQDemoViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
