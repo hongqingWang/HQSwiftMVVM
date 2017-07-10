@@ -10,6 +10,9 @@ import UIKit
 
 class HQBaseViewController: UIViewController {
     
+    /// 用户不登录就不显示`tableView`
+    var tableView: UITableView?
+    
     /// 自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.hq_screenWidth(), height: 64))
     /// 自定义导航条目 - 以后设置导航栏内容,统一使用`navItem`
@@ -34,6 +37,12 @@ extension HQBaseViewController {
     func setupUI() {
         
         view.backgroundColor = UIColor.hq_randomColor()
+        setupNavigationBar()
+    }
+    
+    /// 设置导航条
+    fileprivate func setupNavigationBar() {
+        
         view.addSubview(navigationBar)
         navigationBar.items = [navItem]
         // 设置`navigationBar`的渲染颜色
