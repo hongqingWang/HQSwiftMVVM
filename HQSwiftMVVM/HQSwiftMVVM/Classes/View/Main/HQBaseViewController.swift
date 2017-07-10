@@ -38,5 +38,7 @@ extension HQBaseViewController {
         navigationBar.items = [navItem]
         // 设置`navigationBar`的渲染颜色
         navigationBar.barTintColor = UIColor.hq_color(withHex: 0xF6F6F6)
+        // 设置导航栏`title`的颜色
+        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.darkGray]
     }
 }

@@ -34,7 +34,7 @@ class HQNavigationController: UINavigationController {
                     title = childViewControllers.first?.title ?? "返回"
                 }
                 
-                vc.navItem.leftBarButtonItem = UIBarButtonItem(hq_title: title, target: self, action: #selector(popToParent))
+                vc.navItem.leftBarButtonItem = UIBarButtonItem(hq_title: title, target: self, action: #selector(popToParent), isBack: true)
             }
         }
         
