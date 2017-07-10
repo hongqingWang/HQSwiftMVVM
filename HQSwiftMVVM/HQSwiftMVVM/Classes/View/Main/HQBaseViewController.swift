@@ -38,6 +38,13 @@ extension HQBaseViewController {
         
         view.backgroundColor = UIColor.hq_randomColor()
         setupNavigationBar()
+        setupTableView()
+    }
+    
+    fileprivate func setupTableView() {
+        
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        view.insertSubview(tableView!, belowSubview: navigationBar)
     }
     
     /// 设置导航条
