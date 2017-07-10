@@ -22,6 +22,12 @@ class HQBaseViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        loadData()
+    }
+    
+    /// 加载数据,具体的实现由子类负责
+    func loadData() {
+        
     }
     
     override var title: String? {
