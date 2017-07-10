@@ -17,11 +17,22 @@ class HQMainViewController: UITabBarController {
         setupComposeButton()
     }
     
+    // 设置支持的方向之后,当前的控制器及子控制器都会遵守这个方向,因此写在`HQMainViewController`里面
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     // MARK: - 监听方法
     // FIXME: 没有实现
     // @objc 允许这个函数在运行时通过`OC`消息的消息机制被调用
     @objc fileprivate func composeStatus() {
         print("点击加号按钮")
+        
+        let vc = UIViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        
+        vc.view.backgroundColor = UIColor.hq_randomColor()
+        present(nav, animated: true, completion: nil)
     }
     
     // MARK: - 撰写按钮
