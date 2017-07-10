@@ -45,6 +45,10 @@ extension HQBaseViewController {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
+        
+        // 设置数据源和代理,子类可以直接实现数据源方法
+        tableView?.dataSource = self
+        tableView?.delegate = self
     }
     
     /// 设置导航条
@@ -56,5 +60,22 @@ extension HQBaseViewController {
         navigationBar.barTintColor = UIColor.hq_color(withHex: 0xF6F6F6)
         // 设置导航栏`title`的颜色
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.darkGray]
+    }
+}
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
+extension HQBaseViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    /*
+     基类只是实现方法,子类负责具体的实现
+     子类的数据源方法不需要`super`
+     返回`UITableViewCell()`只是为了没有语法错误
+     */
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
