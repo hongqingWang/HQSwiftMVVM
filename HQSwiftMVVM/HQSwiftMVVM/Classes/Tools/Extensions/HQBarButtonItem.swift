@@ -10,7 +10,7 @@ import UIKit
 
 extension UIBarButtonItem {
     
-    /// 字体+target+action
+    /// 标题 + target + action
     ///
     /// - Parameters:
     ///   - hq_title: title
@@ -21,6 +21,7 @@ extension UIBarButtonItem {
     convenience init(hq_title: String, fontSize: CGFloat = 16, target: Any?, action: Selector, isBack: Bool = false) {
         
         let btn = UIButton(hq_title: hq_title, fontSize: fontSize, normalColor: UIColor.darkGray, highlightedColor: UIColor.orange)
+        
         
         if isBack {
             let imageName = "nav_back"

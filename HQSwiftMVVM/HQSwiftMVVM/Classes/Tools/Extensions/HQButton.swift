@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
     
-    /// 图片+背景图片
+    /// 图片 + 背景图片
     ///
     /// - Parameters:
     ///   - imageName: 图像名称
@@ -30,11 +30,11 @@ extension UIButton {
         sizeToFit()
     }
     
-    /// 标题+字体颜色
+    /// 标题 + 字体颜色
     ///
     /// - Parameters:
     ///   - hq_title: 标题
-    ///   - fontSize: 字号(optional)
+    ///   - fontSize: 字号(默认 16 号)
     ///   - normalColor: normalColor
     ///   - highlightedColor: highlightedColor
     convenience init(hq_title: String, fontSize: CGFloat = 16, normalColor: UIColor, highlightedColor: UIColor) {
@@ -46,6 +46,16 @@ extension UIButton {
         setTitleColor(highlightedColor, for: .highlighted)
         
         // 注意: 这里不写`sizeToFit()`那么`Button`就显示不出来
+        sizeToFit()
+    }
+    
+    convenience init(hq_title: String, color: UIColor, backImageName: String) {
+        self.init()
+        
+        setTitle(hq_title, for: .normal)
+        setTitleColor(color, for: .normal)
+        setBackgroundImage(UIImage.init(named: backImageName), for: .normal)
+        
         sizeToFit()
     }
     
