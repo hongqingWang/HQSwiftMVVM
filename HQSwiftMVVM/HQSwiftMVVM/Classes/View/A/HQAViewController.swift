@@ -17,8 +17,14 @@ class HQAViewController: HQBaseViewController {
     /// 加载数据
     override func loadData() {
         
-        for i in 0..<15 {
-            statusList.insert(i.description, at: 0)
+        // 模拟`延时`加载数据
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+            
+            for i in 0..<15 {
+                self.statusList.insert(i.description, at: 0)
+            }
+            self.refreshControl?.endRefreshing()
+            self.tableView?.reloadData()
         }
     }
     
