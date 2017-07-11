@@ -10,6 +10,9 @@ import UIKit
 
 class HQBaseViewController: UIViewController {
     
+    /// 用户登录标记
+    var userLogon = false
+    
     /// 用户不登录就不显示`tableView`
     var tableView: UITableView?
     /// 刷新控件
@@ -55,9 +58,11 @@ extension HQBaseViewController {
         
         view.backgroundColor = UIColor.hq_randomColor()
         setupNavigationBar()
-        setupTableView()
+        
+        userLogon ? setupTableView() : setupVistorView()
     }
     
+    /// 设置 TableView
     fileprivate func setupTableView() {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
@@ -75,6 +80,14 @@ extension HQBaseViewController {
         refreshControl = UIRefreshControl()
         tableView?.addSubview(refreshControl!)
         refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
+    }
+    
+    /// 设置访客视图
+    fileprivate func setupVistorView() {
+        
+        let vistorView = UIView(frame: view.bounds)
+        vistorView.backgroundColor = UIColor.hq_randomColor()
+        view.insertSubview(vistorView, belowSubview: navigationBar)
     }
     
     /// 设置导航条

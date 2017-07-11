@@ -33,7 +33,7 @@ class HQAViewController: HQBaseViewController {
             self.tableView?.reloadData()
         }
     }
-    
+     
     @objc fileprivate func showFriends() {
         
         let vc = HQDemoViewController()
