@@ -12,6 +12,8 @@ class HQBaseViewController: UIViewController {
     
     /// 用户不登录就不显示`tableView`
     var tableView: UITableView?
+    /// 刷新控件
+    var refreshControl: UIRefreshControl?
     
     /// 自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.hq_screenWidth(), height: 64))
@@ -66,6 +68,10 @@ extension HQBaseViewController {
                                                left: 0,
                                                bottom: tabBarController?.tabBar.bounds.height ?? 49,
                                                right: 0)
+        // 设置刷新控件
+        refreshControl = UIRefreshControl()
+        tableView?.addSubview(refreshControl!)
+        refreshControl?.addTarget(self, action: #selector(loadData), for: .valueChanged)
     }
     
     /// 设置导航条
