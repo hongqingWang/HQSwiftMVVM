@@ -85,8 +85,7 @@ extension HQBaseViewController {
     /// 设置访客视图
     fileprivate func setupVistorView() {
         
-        let vistorView = UIView(frame: view.bounds)
-        vistorView.backgroundColor = UIColor.hq_randomColor()
+        let vistorView = HQVistorView(frame: view.bounds)
         view.insertSubview(vistorView, belowSubview: navigationBar)
     }
     
