@@ -24,6 +24,8 @@ class HQVistorView: UIView {
     
     /// 图像视图
     fileprivate lazy var iconImageView: UIImageView = UIImageView(hq_imageName: "visitordiscover_feed_image_smallicon")
+    /// 遮罩视图
+    fileprivate lazy var maskImageView: UIImageView = UIImageView(hq_imageName: "visitordiscover_feed_mask_smallicon")
     /// 小房子
     fileprivate lazy var houseImageView: UIImageView = UIImageView(hq_imageName: "visitordiscover_feed_image_house")
     /// 提示标签
@@ -42,6 +44,7 @@ extension HQVistorView {
         backgroundColor = UIColor.white
         
         addSubview(iconImageView)
+        addSubview(maskImageView)
         addSubview(houseImageView)
         addSubview(tipLabel)
         addSubview(registerButton)
@@ -155,5 +158,33 @@ extension HQVistorView {
                                          attribute: .width,
                                          multiplier: 1.0,
                                          constant: 0))
+        /// 遮罩视图布局,采用 VFL 布局
+        /*
+         VFL 可视化语言
+         多用于连续参照关系,如遇到居中对其,通常多使用参照
+         - `H`水平方向
+         - `V`竖直方向
+         - `|`边界
+         - `[]`包含控件的名称字符串,对应关系在`views`字典中定义
+         - `()`定义控件的宽/高,可以在`metrics`中指定
+         */
+        /*
+         views: 定义 VFL 中控件名称和实际名称的映射关系
+         metrics: 定义 VFL 中 () 内指定的常数映射关系,防止在代码中出现魔法数字
+         */
+        let viewDict: [String: Any] = ["maskImageView": maskImageView,
+                        "registerButton": registerButton]
+        let metrics = ["spacing": -35]
+        
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "H:|-0-[maskImageView]-0-|",
+            options: [],
+            metrics: nil,
+            views: viewDict))
+        addConstraints(NSLayoutConstraint.constraints(
+            withVisualFormat: "V:|-0-[maskImageView]-(spacing)-[registerButton]",
+            options: [],
+            metrics: metrics,
+            views: viewDict))
     }
 }
