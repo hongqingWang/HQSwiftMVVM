@@ -14,6 +14,8 @@ class HQBaseViewController: UIViewController {
     var tableView: UITableView?
     /// 刷新控件
     var refreshControl: UIRefreshControl?
+    /// 上拉刷新标记
+    var isPullup = false
     
     /// 自定义导航条
     lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.hq_screenWidth(), height: 64))
@@ -35,7 +37,8 @@ class HQBaseViewController: UIViewController {
     
     /// 加载数据,具体的实现由子类负责
     func loadData() {
-        
+        // 如果子类不实现任何方法,默认关闭刷新控件
+        refreshControl?.endRefreshing()
     }
     
     override var title: String? {
@@ -100,5 +103,23 @@ extension HQBaseViewController: UITableViewDataSource, UITableViewDelegate {
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        let row = indexPath.row
+        let section = tableView.numberOfSections - 1
+        
+        if row < 0 || section < 0 {
+            return
+        }
+        
+        let count = tableView.numberOfRows(inSection: section)
+        
+        if row == (count - 1) && !isPullup {
+            
+            isPullup = true
+            loadData()
+        }
     }
 }

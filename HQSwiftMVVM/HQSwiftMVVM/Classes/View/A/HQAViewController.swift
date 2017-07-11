@@ -18,12 +18,18 @@ class HQAViewController: HQBaseViewController {
     override func loadData() {
         
         // 模拟`延时`加载数据
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             
             for i in 0..<15 {
-                self.statusList.insert(i.description, at: 0)
+                
+                if self.isPullup {
+                    self.statusList.append("上拉 \(i)")
+                } else {
+                    self.statusList.insert(i.description, at: 0)
+                }
             }
             self.refreshControl?.endRefreshing()
+            self.isPullup = false
             self.tableView?.reloadData()
         }
     }
