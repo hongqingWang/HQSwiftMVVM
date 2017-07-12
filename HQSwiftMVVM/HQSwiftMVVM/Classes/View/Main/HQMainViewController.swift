@@ -103,8 +103,8 @@ extension HQMainViewController {
                 ]
             ]
         ]
-        
-        (array as NSArray).write(toFile: "/Users/wanghongqing/Desktop/demo.plist", atomically: true)
+        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
+        (data as NSData).write(toFile: "/Users/wanghongqing/Desktop/main.json", atomically: true)
         
         var arrayM = [UIViewController]()
         for dict in array {
