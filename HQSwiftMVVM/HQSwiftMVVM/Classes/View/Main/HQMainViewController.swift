@@ -69,14 +69,43 @@ extension HQMainViewController {
                 "imageName": "a",
                 "visitorInfo": [
                     "imageName": "",
-                    "message": "哈哈"
+                    "message": "关注一些人，回这里看看有什么惊喜"
                 ]
             ],
-            ["className": "HQBViewController", "title": "消息", "imageName": "b"],
-            ["className": "UIViewController"],
-            ["className": "HQCViewController", "title": "发现", "imageName": "c"],
-            ["className": "HQDViewController", "title": "我", "imageName": "d"]
+            [
+                "className": "HQBViewController",
+                "title": "消息",
+                "imageName": "b",
+                "visitorInfo": [
+                    "imageName": "visitordiscover_image_message",
+                    "message": "登录后，别人评论你的微博，发给你的信息，都会在这里收到通知"
+                ]
+            ],
+            [
+                "className": "UIViewController"
+            ],
+            [
+                "className": "HQCViewController",
+                "title": "发现",
+                "imageName": "c",
+                "visitorInfo": [
+                    "imageName": "visitordiscover_image_message",
+                    "message": "登录后，最新、最热微博尽在掌握，不再会与时事潮流擦肩而过"
+                ]
+            ],
+            [
+                "className": "HQDViewController",
+                "title": "我",
+                "imageName": "d",
+                "visitorInfo": [
+                    "imageName": "visitordiscover_image_profile",
+                    "message": "登录后，你的微博、相册，个人资料会显示在这里，显示给别人"
+                ]
+            ]
         ]
+        
+        (array as NSArray).write(toFile: "/Users/wanghongqing/Desktop/demo.plist", atomically: true)
+        
         var arrayM = [UIViewController]()
         for dict in array {
             arrayM.append(controller(dict: dict))
@@ -93,7 +122,7 @@ extension HQMainViewController {
     
     /// 使用字典创建一个子控制器
     ///
-    /// - Parameter dict: 信息字典[className, title, imageName]
+    /// - Parameter dict: 信息字典[className, title, imageName, "vistorInfo"]
     /// - Returns: 子控制器
     fileprivate func controller(dict: [String: Any]) -> UIViewController {
         
