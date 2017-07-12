@@ -62,8 +62,16 @@ extension HQMainViewController {
     /// 设置所有子控制器
     fileprivate func setupChildControllers() {
         
-        let array = [
-            ["className": "HQAViewController", "title": "首页", "imageName": "a"],
+        let array: [[String: Any]] = [
+            [
+                "className": "HQAViewController",
+                "title": "首页",
+                "imageName": "a",
+                "visitorInfo": [
+                    "imageName": "",
+                    "message": "哈哈"
+                ]
+            ],
             ["className": "HQBViewController", "title": "消息", "imageName": "b"],
             ["className": "UIViewController"],
             ["className": "HQCViewController", "title": "发现", "imageName": "c"],
@@ -87,12 +95,12 @@ extension HQMainViewController {
     ///
     /// - Parameter dict: 信息字典[className, title, imageName]
     /// - Returns: 子控制器
-    fileprivate func controller(dict: [String: String]) -> UIViewController {
+    fileprivate func controller(dict: [String: Any]) -> UIViewController {
         
         // 1. 获取字典内容
-        guard let className = dict["className"],
-            let title = dict["title"],
-            let imageName = dict["imageName"],
+        guard let className = dict["className"] as? String,
+            let title = dict["title"] as? String,
+            let imageName = dict["imageName"] as? String,
             let cls = NSClassFromString(Bundle.main.namespace + "." + className) as? UIViewController.Type else {
                 
                 return UIViewController()

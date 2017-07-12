@@ -9,7 +9,23 @@
 import UIKit
 
 class HQVistorView: UIView {
-
+    
+    /// 设置访客视图信息字典[imageName / message]
+    var vistorInfo: [String: String]? {
+        didSet {
+            guard let imageName = vistorInfo?["imageName"],
+                let message = vistorInfo?["message"]
+            else {
+                return
+            }
+            tipLabel.text = message
+            if imageName == "" {
+                return
+            }
+            iconImageView.image = UIImage(named: imageName)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -41,7 +57,8 @@ class HQVistorView: UIView {
 extension HQVistorView {
     
     fileprivate func setupUI() {
-        backgroundColor = UIColor.white
+        
+        backgroundColor = UIColor.hq_color(withHex: 0xEDEDED)
         
         addSubview(iconImageView)
         addSubview(maskImageView)
@@ -49,7 +66,7 @@ extension HQVistorView {
         addSubview(tipLabel)
         addSubview(registerButton)
         addSubview(loginButton)
-        
+
         // 取消 autoresizing
         for v in subviews {
             v.translatesAutoresizingMaskIntoConstraints = false
@@ -61,7 +78,7 @@ extension HQVistorView {
          firstItem.firstAttribute {==,<=,>=} secondItem.secondAttribute * multiplier + constant
          */
         let margin: CGFloat = 20.0
-        
+
         /// 图像视图
         addConstraint(NSLayoutConstraint(item: iconImageView,
                                          attribute: .centerX,
@@ -175,7 +192,7 @@ extension HQVistorView {
         let viewDict: [String: Any] = ["maskImageView": maskImageView,
                         "registerButton": registerButton]
         let metrics = ["spacing": -35]
-        
+
         addConstraints(NSLayoutConstraint.constraints(
             withVisualFormat: "H:|-0-[maskImageView]-0-|",
             options: [],

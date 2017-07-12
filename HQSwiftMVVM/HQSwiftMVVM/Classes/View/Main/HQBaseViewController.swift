@@ -13,6 +13,9 @@ class HQBaseViewController: UIViewController {
     /// 用户登录标记
     var userLogon = false
     
+    /// 设置访客视图信息字典
+    var visitorInfoDictionary: [String: String]?
+    
     /// 用户不登录就不显示`tableView`
     var tableView: UITableView?
     /// 刷新控件
@@ -87,6 +90,7 @@ extension HQBaseViewController {
         
         let vistorView = HQVistorView(frame: view.bounds)
         view.insertSubview(vistorView, belowSubview: navigationBar)
+        vistorView.vistorInfo = visitorInfoDictionary
     }
     
     /// 设置导航条
