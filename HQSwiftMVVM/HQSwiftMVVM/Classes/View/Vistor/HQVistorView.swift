@@ -23,6 +23,9 @@ class HQVistorView: UIView {
                 return
             }
             iconImageView.image = UIImage(named: imageName)
+            
+            houseImageView.isHidden = true
+            maskImageView.isHidden = true
         }
     }
     
@@ -67,6 +70,8 @@ extension HQVistorView {
         addSubview(registerButton)
         addSubview(loginButton)
 
+        tipLabel.textAlignment = .center
+        
         // 取消 autoresizing
         for v in subviews {
             v.translatesAutoresizingMaskIntoConstraints = false
