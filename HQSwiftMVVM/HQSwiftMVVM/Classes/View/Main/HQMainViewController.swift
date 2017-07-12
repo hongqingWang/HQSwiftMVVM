@@ -130,7 +130,10 @@ extension HQMainViewController {
         guard let className = dict["className"] as? String,
             let title = dict["title"] as? String,
             let imageName = dict["imageName"] as? String,
-            let cls = NSClassFromString(Bundle.main.namespace + "." + className) as? UIViewController.Type else {
+            let cls = NSClassFromString(Bundle.main.namespace + "." + className) as? HQBaseViewController.Type,
+            let vistorDict = dict["visitorInfo"] as? [String: String]
+        
+            else {
                 
                 return UIViewController()
         }
@@ -138,6 +141,7 @@ extension HQMainViewController {
         // 2. 创建视图控制器
         let vc = cls.init()
         vc.title = title
+        vc.visitorInfoDictionary = vistorDict
         
         // 3. 设置图像
         vc.tabBarItem.image = UIImage(named: "tabbar_" + imageName)
