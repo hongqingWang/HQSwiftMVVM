@@ -20,6 +20,7 @@ class HQVistorView: UIView {
             }
             tipLabel.text = message
             if imageName == "" {
+                startAnimation()
                 return
             }
             iconImageView.image = UIImage(named: imageName)
@@ -39,8 +40,21 @@ class HQVistorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - 私有控件
+    /// 旋转视图动画
+    fileprivate func startAnimation() {
+        
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        anim.toValue = 2 * Double.pi
+        anim.repeatCount = MAXFLOAT
+        anim.duration = 15
+        
+        // 设置动画一直保持转动,如果`iconImageView`被释放,动画会被一起释放
+        anim.isRemovedOnCompletion = false
+        // 将动画添加到图层
+        iconImageView.layer.add(anim, forKey: nil)
+    }
     
+    // MARK: - 私有控件
     /// 图像视图
     fileprivate lazy var iconImageView: UIImageView = UIImageView(hq_imageName: "visitordiscover_feed_image_smallicon")
     /// 遮罩视图
