@@ -62,52 +62,28 @@ extension HQMainViewController {
     /// 设置所有子控制器
     fileprivate func setupChildControllers() {
         
-        let array: [[String: Any]] = [
-            [
-                "className": "HQAViewController",
-                "title": "首页",
-                "imageName": "a",
-                "visitorInfo": [
-                    "imageName": "",
-                    "message": "关注一些人，回这里看看有什么惊喜"
-                ]
-            ],
-            [
-                "className": "HQBViewController",
-                "title": "消息",
-                "imageName": "b",
-                "visitorInfo": [
-                    "imageName": "visitordiscover_image_message",
-                    "message": "登录后，别人评论你的微博，发给你的信息，都会在这里收到通知"
-                ]
-            ],
-            [
-                "className": "UIViewController"
-            ],
-            [
-                "className": "HQCViewController",
-                "title": "发现",
-                "imageName": "c",
-                "visitorInfo": [
-                    "imageName": "visitordiscover_image_message",
-                    "message": "登录后，最新、最热微博尽在掌握，不再会与时事潮流擦肩而过"
-                ]
-            ],
-            [
-                "className": "HQDViewController",
-                "title": "我",
-                "imageName": "d",
-                "visitorInfo": [
-                    "imageName": "visitordiscover_image_profile",
-                    "message": "登录后，你的微博、相册，个人资料会显示在这里，显示给别人"
-                ]
-            ]
-        ]
-        let data = try! JSONSerialization.data(withJSONObject: array, options: [.prettyPrinted])
-        (data as NSData).write(toFile: "/Users/wanghongqing/Desktop/main.json", atomically: true)
+        /// 获取沙盒`json`路径
+        let docPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let jsonPath = (docPath as NSString).appendingPathComponent("main.json")
+        
+        /// 加载 `data`
+        var data = NSData(contentsOfFile: jsonPath)
+        
+        /// 如果`data`没有内容,说明沙盒没有内容
+        if data == nil {
+            // 从`bundle`加载`data`
+            let path = Bundle.main.path(forResource: "main.json", ofType: nil)
+            data = NSData(contentsOfFile: path!)
+        }
+        
+        // 从`Bundle`加载配置的`json`
+        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String: Any]]
+            else {
+            return
+        }
         
         var arrayM = [UIViewController]()
-        for dict in array {
+        for dict in array! {
             arrayM.append(controller(dict: dict))
         }
         viewControllers = arrayM
