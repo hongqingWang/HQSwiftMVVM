@@ -54,6 +54,17 @@ class HQBaseViewController: UIViewController {
     }
 }
 
+// MARK: - 注册/登录 点击事件
+extension HQBaseViewController {
+    
+    @objc fileprivate func login() {
+        print(#function)
+    }
+    @objc fileprivate func register() {
+        print("bbb")
+    }
+}
+
 // MARK: - 设置界面
 extension HQBaseViewController {
     
@@ -91,6 +102,8 @@ extension HQBaseViewController {
         let vistorView = HQVistorView(frame: view.bounds)
         view.insertSubview(vistorView, belowSubview: navigationBar)
         vistorView.vistorInfo = visitorInfoDictionary
+        vistorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
+        vistorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
     }
     
     /// 设置导航条

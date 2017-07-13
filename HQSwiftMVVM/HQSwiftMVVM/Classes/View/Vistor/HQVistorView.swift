@@ -10,6 +10,11 @@ import UIKit
 
 class HQVistorView: UIView {
     
+    /// 注册按钮
+    lazy var registerButton: UIButton = UIButton(hq_title: "注册", color: UIColor.orange, backImageName: "common_button_white_disable")
+    /// 登录按钮
+    lazy var loginButton: UIButton = UIButton(hq_title: "登录", color: UIColor.darkGray, backImageName: "common_button_white_disable")
+    
     /// 设置访客视图信息字典[imageName / message]
     var vistorInfo: [String: String]? {
         didSet {
@@ -63,11 +68,6 @@ class HQVistorView: UIView {
     fileprivate lazy var houseImageView: UIImageView = UIImageView(hq_imageName: "visitordiscover_feed_image_house")
     /// 提示标签
     fileprivate lazy var tipLabel: UILabel = UILabel(hq_title: "关注一些人，回这里看看有什么惊喜关注一些人，回这里看看有什么惊喜")
-    /// 注册按钮
-    fileprivate lazy var registerButton: UIButton = UIButton(hq_title: "注册", color: UIColor.orange, backImageName: "common_button_white_disable")
-    /// 登录按钮
-    fileprivate lazy var loginButton: UIButton = UIButton(hq_title: "登录", color: UIColor.darkGray, backImageName: "common_button_white_disable")
-    
 }
 
 // MARK: - 设置访客视图界面
