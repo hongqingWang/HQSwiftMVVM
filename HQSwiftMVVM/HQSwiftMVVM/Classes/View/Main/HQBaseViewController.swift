@@ -68,7 +68,7 @@ extension HQBaseViewController {
 // MARK: - 设置界面
 extension HQBaseViewController {
     
-    func setupUI() {
+    fileprivate func setupUI() {
         
         view.backgroundColor = UIColor.hq_randomColor()
         setupNavigationBar()
@@ -77,7 +77,7 @@ extension HQBaseViewController {
     }
     
     /// 设置 TableView
-    fileprivate func setupTableView() {
+    func setupTableView() {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
@@ -104,6 +104,9 @@ extension HQBaseViewController {
         vistorView.vistorInfo = visitorInfoDictionary
         vistorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
         vistorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
+        
+        navItem.leftBarButtonItem = UIBarButtonItem(hq_title: "注册", target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(hq_title: "登录", target: self, action: #selector(login))
     }
     
     /// 设置导航条

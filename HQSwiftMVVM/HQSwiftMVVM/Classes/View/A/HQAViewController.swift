@@ -60,8 +60,8 @@ extension HQAViewController {
 extension HQAViewController {
     
     /// 重写父类的方法
-    override func setupUI() {
-        super.setupUI()
+    override func setupTableView() {
+        super.setupTableView()
         
         navItem.leftBarButtonItem = UIBarButtonItem(hq_title: "好友", target: self, action: #selector(showFriends))
         tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
