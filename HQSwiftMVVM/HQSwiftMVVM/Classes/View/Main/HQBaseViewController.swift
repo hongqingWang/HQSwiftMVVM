@@ -105,8 +105,8 @@ extension HQBaseViewController {
         vistorView.loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
         vistorView.registerButton.addTarget(self, action: #selector(register), for: .touchUpInside)
         
-        navItem.leftBarButtonItem = UIBarButtonItem(hq_title: "注册", target: self, action: #selector(register))
-        navItem.rightBarButtonItem = UIBarButtonItem(hq_title: "登录", target: self, action: #selector(login))
+        navItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: .plain, target: self, action: #selector(register))
+        navItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: .plain, target: self, action: #selector(login))
     }
     
     /// 设置导航条
@@ -118,6 +118,8 @@ extension HQBaseViewController {
         navigationBar.barTintColor = UIColor.hq_color(withHex: 0xF6F6F6)
         // 设置导航栏`title`的颜色
         navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.darkGray]
+        // 设置系统`leftBarButtonItem`渲染颜色
+        navigationBar.tintColor = UIColor.orange
     }
 }
 
