@@ -1,0 +1,6 @@
+framework module Pods_HQSwiftMVVM {
+  umbrella header "Pods-HQSwiftMVVM-umbrella.h"
+
+  export *
+  module * { export * }
+}
