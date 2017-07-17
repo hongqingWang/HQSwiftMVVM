@@ -11,7 +11,7 @@ import UIKit
 class HQBaseViewController: UIViewController {
     
     /// 用户登录标记
-    var userLogon = false
+    var userLogon = true//false
     
     /// 设置访客视图信息字典
     var visitorInfoDictionary: [String: String]?
