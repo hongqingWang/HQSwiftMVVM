@@ -17,7 +17,16 @@ class HQAViewController: HQBaseViewController {
     /// 加载数据
     override func loadData() {
         
-        print("开始加载数据 \(HQNetWorkManager.shared)")
+        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let para = ["access_token": "2.00It5tsGQ6eDJE4ecbf2d825DCpbBD"]
+        
+        HQNetWorkManager.shared.get(urlString, parameters: para, progress: nil, success: { (_, json) in
+            print(json ?? "")
+        }) { (_, error) in
+            print(error)
+        }
+        
+//        print("开始加载数据 \(HQNetWorkManager.shared)")
         // 模拟`延时`加载数据
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
             
