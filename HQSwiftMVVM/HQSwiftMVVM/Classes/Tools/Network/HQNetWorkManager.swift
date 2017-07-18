@@ -20,11 +20,13 @@ class HQNetWorkManager: AFHTTPSessionManager {
     
     /// token
     var accessToken: String? = "2.00It5tsGQ6eDJE4ecbf2d825DCpbBD"
-    
+
     /// 带`token`的网络请求方法
     func tokenRequest(method: HQHTTPMethod = .GET, URLString: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         
         guard let token = accessToken else {
+            
+            // FIXME: 发送通知,提示用户登录
             print("没有 token 需要重新登录")
             completion(nil, false)
             return
@@ -55,6 +57,13 @@ class HQNetWorkManager: AFHTTPSessionManager {
         }
         
         let failure = { (task: URLSessionDataTask?, error: Error)->() in
+            
+            if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
+                print("token 过期了")
+                
+                // FIXME: 发送通知,提示用户再次登录
+            }
+            
             print("网络请求错误 \(error)")
             completion(nil, false)
         }
