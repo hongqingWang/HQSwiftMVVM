@@ -12,31 +12,37 @@ fileprivate let cellId = "cellId"
 
 class HQAViewController: HQBaseViewController {
 
-    fileprivate lazy var statusList = [String]()
+//    fileprivate lazy var statusList = [String]()
+    fileprivate lazy var listViewModel = HQStatusListViewModel()
     
     /// 加载数据
     override func loadData() {
-        
-        HQNetWorkManager.shared.statusList { (list, isSuccess) in
-            print(list ?? "")
-        }
-        //        print("开始加载数据 \(HQNetWorkManager.shared)")
-        
-        // 模拟`延时`加载数据
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            
-            for i in 0..<15 {
-                
-                if self.isPullup {
-                    self.statusList.append("上拉 \(i)")
-                } else {
-                    self.statusList.insert(i.description, at: 0)
-                }
-            }
+
+        listViewModel.loadStatus { (isSuccess) in
             self.refreshControl?.endRefreshing()
             self.isPullup = false
             self.tableView?.reloadData()
         }
+//        HQNetWorkManager.shared.statusList { (list, isSuccess) in
+//            print(list ?? "")
+//        }
+//        //        print("开始加载数据 \(HQNetWorkManager.shared)")
+        
+        // 模拟`延时`加载数据
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+//            
+//            for i in 0..<15 {
+//                
+//                if self.isPullup {
+//                    self.statusList.append("上拉 \(i)")
+//                } else {
+//                    self.statusList.insert(i.description, at: 0)
+//                }
+//            }
+//            self.refreshControl?.endRefreshing()
+//            self.isPullup = false
+//            self.tableView?.reloadData()
+//        }
     }
      
     @objc fileprivate func showFriends() {
@@ -50,13 +56,14 @@ class HQAViewController: HQBaseViewController {
 extension HQAViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return statusList.count
+        return listViewModel.statusList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = statusList[indexPath.row]
+//        cell.textLabel?.text = statusList[indexPath.row]
+        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
         return cell
     }
 }
