@@ -77,7 +77,7 @@ extension HQMainViewController {
         }
         
         // 从`Bundle`加载配置的`json`
-        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String: Any]]
+        guard let array = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [[String: AnyObject]]
             else {
             return
         }
@@ -100,7 +100,7 @@ extension HQMainViewController {
     ///
     /// - Parameter dict: 信息字典[className, title, imageName, "vistorInfo"]
     /// - Returns: 子控制器
-    fileprivate func controller(dict: [String: Any]) -> UIViewController {
+    fileprivate func controller(dict: [String: AnyObject]) -> UIViewController {
         
         // 1. 获取字典内容
         guard let className = dict["className"] as? String,

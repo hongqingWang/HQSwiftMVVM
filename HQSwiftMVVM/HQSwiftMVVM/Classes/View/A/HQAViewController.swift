@@ -13,20 +13,12 @@ fileprivate let cellId = "cellId"
 class HQAViewController: HQBaseViewController {
 
     fileprivate lazy var statusList = [String]()
-
+    
     /// 加载数据
     override func loadData() {
         
-        let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let para = ["access_token": "2.00It5tsGQ6eDJE4ecbf2d825DCpbBD"]
-
-        //        HQNetWorkManager.shared.get(urlString, parameters: para, progress: nil, success: { (_, json) in
-        //            print(json ?? "")
-        //        }) { (_, error) in
-        //            print(error)
-        //        }
-        HQNetWorkManager.shared.request(URLString: urlString, parameters: para) { (json, isSuccess) in
-            print(json ?? "")
+        HQNetWorkManager.shared.statusList { (list, isSuccess) in
+            print(list ?? "")
         }
         //        print("开始加载数据 \(HQNetWorkManager.shared)")
         
