@@ -16,9 +16,8 @@ extension HQNetWorkManager {
     func statusList(completion: @escaping (_ list: [[String: AnyObject]]?, _ isSuccess: Bool)->()) {
         
         let urlString = "https://api.weibo.com/2/statuses/home_timeline.json"
-        let para = ["access_token": "2.00It5tsGQ6eDJE4ecbf2d825DCpbBD"]
         
-        request(URLString: urlString, parameters: para) { (json, isSuccess) in
+        tokenRequest(URLString: urlString, parameters: nil) { (json, isSuccess) in
             /*
              从`json`中获取`statuses`字典数组
              如果`as?`失败,`result = nil`

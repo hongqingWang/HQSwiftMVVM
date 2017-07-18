@@ -18,6 +18,29 @@ class HQNetWorkManager: AFHTTPSessionManager {
     
     static let shared = HQNetWorkManager()
     
+    /// token
+    var accessToken: String? = "2.00It5tsGQ6eDJE4ecbf2d825DCpbBD"
+    
+    /// 带`token`的网络请求方法
+    func tokenRequest(method: HQHTTPMethod = .GET, URLString: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
+        
+        guard let token = accessToken else {
+            print("没有 token 需要重新登录")
+            completion(nil, false)
+            return
+        }
+        
+        var parameters = parameters
+        
+        if parameters == nil {
+            parameters = [String: AnyObject]()
+        }
+        
+        parameters!["access_token"] = token as AnyObject
+        
+        request(URLString: URLString, parameters: parameters, completion: completion)
+    }
+    
     /// 封装 AFN 的 GET/POST 请求
     ///
     /// - Parameters:
@@ -25,7 +48,7 @@ class HQNetWorkManager: AFHTTPSessionManager {
     ///   - URLString: URLString
     ///   - parameters: parameters
     ///   - completion: 完成回调(json, isSuccess)
-    func request(method: HQHTTPMethod = .GET, URLString: String, parameters: [String: Any], completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
+    func request(method: HQHTTPMethod = .GET, URLString: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         
         let success = { (task: URLSessionDataTask, json: Any?)->() in
             completion(json, true)
