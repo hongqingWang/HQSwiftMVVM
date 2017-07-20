@@ -12,10 +12,19 @@ import Foundation
 class HQStatusListViewModel {
     
     lazy var statusList = [HQStatus]()
-    
-    func loadStatus(completion: @escaping (_ isSuccess: Bool)->()) {
+
+    /// 加载微博数据字典数组
+    ///
+    /// - Parameters:§
+    ///   - completion: 完成回调,微博字典数组/是否成功
+    func loadStatus(pullup: Bool, completion: @escaping (_ isSuccess: Bool)->()) {
         
-        HQNetWorkManager.shared.statusList { (list, isSuccess) in
+        // 取出微博中已经加载的第一条微博(最新的一条微博)的`since_id`进行比较,对下拉刷新做处理
+        let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
+        // 上拉刷新,取出数组的最后一条微博`id`
+        let max_id = !pullup ? 0 : (statusList.last?.id ?? 0)
+        
+        HQNetWorkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             guard let array = NSArray.yy_modelArray(with: HQStatus.classForCoder(), json: list ?? []) as? [HQStatus] else {
                 
@@ -23,8 +32,16 @@ class HQStatusListViewModel {
                 
                 return
             }
-            
-            self.statusList += array
+            print("刷新到 \(array.count) 条数据")
+            // FIXME: 拼接数据
+            // 下拉刷新
+            if pullup {
+                // 上拉刷新结束后,将数据拼接在数组的末尾
+                self.statusList += array
+            } else {
+                // 下拉刷新结束后,将数据拼接在数组的最前面
+                self.statusList = array + self.statusList
+            }
             
             completion(isSuccess)
         }
