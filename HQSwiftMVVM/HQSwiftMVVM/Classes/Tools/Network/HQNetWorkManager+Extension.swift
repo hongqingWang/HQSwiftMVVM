@@ -35,4 +35,19 @@ extension HQNetWorkManager {
             completion(result, isSuccess)
         }
     }
+    
+    func unreadCount() {
+        
+        guard let uid = uid else {
+            return
+        }
+        
+        let urlString = "https://rm.api.weibo.com/2/remind/unread_count.json"
+        
+        let para = ["uid": uid]
+        
+        tokenRequest(URLString: urlString, parameters: para as [String : AnyObject]) { (json, isSuccess) in
+            print(json ?? "")
+        }
+    }
 }

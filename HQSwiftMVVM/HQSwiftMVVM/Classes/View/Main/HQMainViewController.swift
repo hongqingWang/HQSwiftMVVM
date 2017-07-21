@@ -15,6 +15,8 @@ class HQMainViewController: UITabBarController {
         
         setupChildControllers()
         setupComposeButton()
+        
+        HQNetWorkManager.shared.unreadCount()
     }
     
     // 设置支持的方向之后,当前的控制器及子控制器都会遵守这个方向,因此写在`HQMainViewController`里面
