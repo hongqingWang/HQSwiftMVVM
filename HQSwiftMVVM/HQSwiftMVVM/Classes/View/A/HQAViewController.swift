@@ -16,14 +16,15 @@ class HQAViewController: HQBaseViewController {
 
     /// 加载数据
     override func loadData() {
-
-        listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess) in
-            
+        listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
             print("最后一条微博数据是 \(self.listViewModel.statusList.last?.text ?? "")")
             
             self.refreshControl?.endRefreshing()
             self.isPullup = false
-            self.tableView?.reloadData()
+            
+            if shouldRefresh {
+                self.tableView?.reloadData()
+            }
         }
     }
     
