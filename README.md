@@ -1741,7 +1741,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 ![](http://upload-images.jianshu.io/upload_images/2069062-94c4e8903b4893b5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-**DEMO传送门：[HQSwiftMVVM](https://github.com/hongqingWang/HQSwiftMVVM)**
+**简书地址：[Swift-MVVM 简单演练(一)](http://www.jianshu.com/p/d568cc9f47ca)**
 
 参考：
 1. [Swift 3 :Closure use of non-escaping parameter may allow it to escape](https://stackoverflow.com/questions/42214840/swift-3-closure-use-of-non-escaping-parameter-may-allow-it-to-escape)
