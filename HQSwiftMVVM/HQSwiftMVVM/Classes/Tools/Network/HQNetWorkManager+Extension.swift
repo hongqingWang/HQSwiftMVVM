@@ -36,7 +36,10 @@ extension HQNetWorkManager {
         }
     }
     
-    func unreadCount() {
+    /// 未读微博数量
+    ///
+    /// - Parameter completion: unreadCount
+    func unreadCount(completion: @escaping (_ count: Int)->()) {
         
         guard let uid = uid else {
             return
@@ -47,7 +50,11 @@ extension HQNetWorkManager {
         let para = ["uid": uid]
         
         tokenRequest(URLString: urlString, parameters: para as [String : AnyObject]) { (json, isSuccess) in
-            print(json ?? "")
+            
+            let dict = json as? [String: AnyObject]
+            let count = dict?["status"] as? Int
+            
+            completion(count ?? 0)
         }
     }
 }

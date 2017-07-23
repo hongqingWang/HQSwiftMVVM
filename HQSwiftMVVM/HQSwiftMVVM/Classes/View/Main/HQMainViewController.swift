@@ -16,7 +16,9 @@ class HQMainViewController: UITabBarController {
         setupChildControllers()
         setupComposeButton()
         
-        HQNetWorkManager.shared.unreadCount()
+    HQNetWorkManager.shared.unreadCount { (count) in
+        print("有 \(count) 条新微博")
+    }
     }
     
     // 设置支持的方向之后,当前的控制器及子控制器都会遵守这个方向,因此写在`HQMainViewController`里面
