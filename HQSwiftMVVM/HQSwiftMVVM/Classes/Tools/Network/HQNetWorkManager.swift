@@ -20,12 +20,16 @@ class HQNetWorkManager: AFHTTPSessionManager {
     
     /// token
 //    var accessToken: String? = "2.00It5tsGKXtWQEfb6d3a2738ImMUAD"
-    var accessToken: String? = "2.00It5tsGQ6eDJE4ecbf2d825DCpbBD"
+    var accessToken: String? //= "2.00It5tsGQ6eDJE4ecbf2d825DCpbBD"
     
     /// 用户微博`id`
     var uid: String? = "6307922850"
     
-
+    /// 用户登录标记(计算型属性)
+    var userLogon: Bool {
+        return accessToken != nil
+    }
+    
     /// 带`token`的网络请求方法
     func tokenRequest(method: HQHTTPMethod = .GET, URLString: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         

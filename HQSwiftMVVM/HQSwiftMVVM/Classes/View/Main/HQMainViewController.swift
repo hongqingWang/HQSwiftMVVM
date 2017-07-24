@@ -88,6 +88,10 @@ extension HQMainViewController {
     /// 定时器触发方法
     @objc fileprivate func updateTimer() {
         
+        if !HQNetWorkManager.shared.userLogon {
+            return
+        }
+        
         HQNetWorkManager.shared.unreadCount { (count) in
             
             print("检测到 \(count) 条微博")

@@ -10,9 +10,6 @@ import UIKit
 
 class HQBaseViewController: UIViewController {
     
-    /// 用户登录标记
-    var userLogon = true//false
-    
     /// 设置访客视图信息字典
     var visitorInfoDictionary: [String: String]?
     
@@ -38,7 +35,8 @@ class HQBaseViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets = false
         
         setupUI()
-        loadData()
+        
+        HQNetWorkManager.shared.userLogon ? loadData() : ()
     }
     
     /// 加载数据,具体的实现由子类负责
@@ -73,7 +71,7 @@ extension HQBaseViewController {
         view.backgroundColor = UIColor.hq_randomColor()
         setupNavigationBar()
         
-        userLogon ? setupTableView() : setupVistorView()
+        HQNetWorkManager.shared.userLogon ? setupTableView() : setupVistorView()
     }
     
     /// 设置 TableView
