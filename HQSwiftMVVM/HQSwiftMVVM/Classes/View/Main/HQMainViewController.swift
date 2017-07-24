@@ -55,7 +55,24 @@ class HQMainViewController: UITabBarController {
 extension UITabBarController: UITabBarControllerDelegate {
     
     public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        print("将要切换到 \(viewController)")
+        
+        // 获取当前控制器在数组中的索引
+        let index = childViewControllers.index(of: viewController)
+        
+        if selectedIndex == 0 && index == selectedIndex {
+            
+            // 获取到当前控制器
+            let nav = childViewControllers[0] as! UINavigationController
+            let vc = nav.childViewControllers[0] as! HQAViewController
+            
+            // 滚动到顶部
+            vc.tableView?.setContentOffset(CGPoint(x: 0, y: -64), animated: true)
+            
+            // 增加延迟,目的是为了保证表格先滚动到顶部,然后再刷新,这样显示不会有问题
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
+                vc.loadData()
+            })
+        }
         
         return !viewController.isMember(of: UIViewController.classForCoder())
     }
@@ -65,7 +82,7 @@ extension UITabBarController: UITabBarControllerDelegate {
 extension HQMainViewController {
     
     fileprivate func setupTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     /// 定时器触发方法

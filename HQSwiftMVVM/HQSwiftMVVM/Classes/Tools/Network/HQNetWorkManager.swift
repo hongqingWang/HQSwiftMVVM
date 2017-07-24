@@ -19,7 +19,8 @@ class HQNetWorkManager: AFHTTPSessionManager {
     static let shared = HQNetWorkManager()
     
     /// token
-    var accessToken: String? = "2.00It5tsGKXtWQEfb6d3a2738ImMUAD"
+//    var accessToken: String? = "2.00It5tsGKXtWQEfb6d3a2738ImMUAD"
+    var accessToken: String? = "2.00It5tsGQ6eDJE4ecbf2d825DCpbBD"
     
     /// 用户微博`id`
     var uid: String? = "6307922850"
