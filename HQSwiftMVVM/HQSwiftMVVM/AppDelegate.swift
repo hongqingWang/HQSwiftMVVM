@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         loadAppInfo()
+        setupNotification(application: application)
         
         return true
     }
@@ -36,6 +38,22 @@ extension AppDelegate {
             let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
             let jsonPath = (path as NSString).appendingPathComponent("main.json")
             data?.write(toFile: jsonPath, atomically: true)
+        }
+    }
+}
+
+extension AppDelegate {
+    
+    fileprivate func setupNotification(application: UIApplication) {
+        
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound, .carPlay]) { (sucess, error) in
+                print("授权" + (sucess ? "成功" : "失败"))
+            }
+        } else {
+            // Fallback on earlier versions
+            let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(notificationSettings)
         }
     }
 }

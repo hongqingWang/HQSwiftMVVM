@@ -9,16 +9,23 @@
 import UIKit
 
 class HQMainViewController: UITabBarController {
-
+    
+    /// 定时器
+    fileprivate var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupChildControllers()
         setupComposeButton()
+        setupTimer()
         
-    HQNetWorkManager.shared.unreadCount { (count) in
-        print("有 \(count) 条新微博")
+        delegate = self
     }
+    
+    deinit {
+        // 销毁定时器
+        timer?.invalidate()
     }
     
     // 设置支持的方向之后,当前的控制器及子控制器都会遵守这个方向,因此写在`HQMainViewController`里面
@@ -42,6 +49,35 @@ class HQMainViewController: UITabBarController {
     // MARK: - 撰写按钮
     fileprivate lazy var composeButton = UIButton(hq_imageName: "tabbar_compose_icon_add",
                                               backImageName: "tabbar_compose_button")
+}
+
+// MARK: - UITabBarControllerDelegate
+extension UITabBarController: UITabBarControllerDelegate {
+    
+    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        print("将要切换到 \(viewController)")
+        
+        return !viewController.isMember(of: UIViewController.classForCoder())
+    }
+}
+
+// MARK: - 定时器相关方法
+extension HQMainViewController {
+    
+    fileprivate func setupTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+    }
+    
+    /// 定时器触发方法
+    @objc fileprivate func updateTimer() {
+        
+        HQNetWorkManager.shared.unreadCount { (count) in
+            
+            print("检测到 \(count) 条微博")
+            self.tabBar.items?[0].badgeValue = count > 0 ? "\(count)" : nil
+            UIApplication.shared.applicationIconBadgeNumber = count
+        }
+    }
 }
 
 /*
