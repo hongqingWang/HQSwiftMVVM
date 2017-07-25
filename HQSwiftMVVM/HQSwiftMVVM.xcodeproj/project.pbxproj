@@ -30,6 +30,7 @@
 		18CD67A81F0F686C00C80A78 /* HQScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A71F0F686C00C80A78 /* HQScreen.swift */; };
 		18CD67AA1F0F693500C80A78 /* HQColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A91F0F693500C80A78 /* HQColor.swift */; };
 		18D649571F161AE40074D2D8 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D649561F161AE40074D2D8 /* main.json */; };
+		18FDF0181F26D68E00DEA265 /* HQCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF0171F26D68E00DEA265 /* HQCommon.swift */; };
 		E1D1ED32D76817BBC6D105B0 /* Pods_HQSwiftMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E50107DFCCC2E0D2CB5571D /* Pods_HQSwiftMVVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		18CD67A71F0F686C00C80A78 /* HQScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQScreen.swift; sourceTree = "<group>"; };
 		18CD67A91F0F693500C80A78 /* HQColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQColor.swift; sourceTree = "<group>"; };
 		18D649561F161AE40074D2D8 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		18FDF0171F26D68E00DEA265 /* HQCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQCommon.swift; sourceTree = "<group>"; };
 		4E50107DFCCC2E0D2CB5571D /* Pods_HQSwiftMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HQSwiftMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853B0572FB3945E0C96F19BD /* Pods-HQSwiftMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQSwiftMVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-HQSwiftMVVM/Pods-HQSwiftMVVM.release.xcconfig"; sourceTree = "<group>"; };
 		CA8FD2644BC1F7BC59747052 /* Pods-HQSwiftMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQSwiftMVVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HQSwiftMVVM/Pods-HQSwiftMVVM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				1859BD1D1F18C46300A6717D /* Network */,
 				180EB8E51F0D2F3800C86ADE /* Extensions */,
+				18FDF0161F26D67F00DEA265 /* Common */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -235,6 +238,14 @@
 				18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		18FDF0161F26D67F00DEA265 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				18FDF0171F26D68E00DEA265 /* HQCommon.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		2DAA64E2881CAA6D05F3DBF3 /* Pods */ = {
@@ -396,6 +407,7 @@
 				1859BD1F1F18C4A400A6717D /* HQNetWorkManager.swift in Sources */,
 				18CD67A61F0F5E4100C80A78 /* HQBarButtonItem.swift in Sources */,
 				188157E81F14A7D100498767 /* HQVistorView.swift in Sources */,
+				18FDF0181F26D68E00DEA265 /* HQCommon.swift in Sources */,
 				180EB8E41F0D28C300C86ADE /* HQDViewController.swift in Sources */,
 				180EB8BC1F0D1F4A00C86ADE /* AppDelegate.swift in Sources */,
 			);

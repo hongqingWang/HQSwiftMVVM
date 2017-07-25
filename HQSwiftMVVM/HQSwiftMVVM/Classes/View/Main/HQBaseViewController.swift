@@ -56,7 +56,8 @@ class HQBaseViewController: UIViewController {
 extension HQBaseViewController {
     
     @objc fileprivate func login() {
-        print(#function)
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: HQUserShouldLoginNotification), object: nil)
     }
     @objc fileprivate func register() {
         print("bbb")

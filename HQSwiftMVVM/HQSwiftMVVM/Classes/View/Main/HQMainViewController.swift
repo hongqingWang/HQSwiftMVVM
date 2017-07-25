@@ -21,11 +21,14 @@ class HQMainViewController: UITabBarController {
         setupTimer()
         
         delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name(rawValue: HQUserShouldLoginNotification), object: nil)
     }
     
     deinit {
         // 销毁定时器
         timer?.invalidate()
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: HQUserShouldLoginNotification), object: nil)
     }
     
     // 设置支持的方向之后,当前的控制器及子控制器都会遵守这个方向,因此写在`HQMainViewController`里面
@@ -34,7 +37,11 @@ class HQMainViewController: UITabBarController {
     }
     
     // MARK: - 监听方法
-    // FIXME: 没有实现
+    @objc fileprivate func login(n: Notification) {
+        
+        print("用户登录通知 \(n)")
+    }
+    
     // @objc 允许这个函数在运行时通过`OC`消息的消息机制被调用
     @objc fileprivate func composeStatus() {
         print("点击加号按钮")
