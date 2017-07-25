@@ -40,6 +40,9 @@ class HQMainViewController: UITabBarController {
     @objc fileprivate func login(n: Notification) {
         
         print("用户登录通知 \(n)")
+        let nav = UINavigationController(rootViewController: HQLoginController())
+        present(nav, animated: true, completion: nil)
+        
     }
     
     // @objc 允许这个函数在运行时通过`OC`消息的消息机制被调用

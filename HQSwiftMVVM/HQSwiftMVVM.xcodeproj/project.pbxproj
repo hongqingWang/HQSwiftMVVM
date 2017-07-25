@@ -31,6 +31,7 @@
 		18CD67AA1F0F693500C80A78 /* HQColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A91F0F693500C80A78 /* HQColor.swift */; };
 		18D649571F161AE40074D2D8 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D649561F161AE40074D2D8 /* main.json */; };
 		18FDF0181F26D68E00DEA265 /* HQCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF0171F26D68E00DEA265 /* HQCommon.swift */; };
+		18FDF01B1F26E08F00DEA265 /* HQLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF01A1F26E08F00DEA265 /* HQLoginController.swift */; };
 		E1D1ED32D76817BBC6D105B0 /* Pods_HQSwiftMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E50107DFCCC2E0D2CB5571D /* Pods_HQSwiftMVVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		18CD67A91F0F693500C80A78 /* HQColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQColor.swift; sourceTree = "<group>"; };
 		18D649561F161AE40074D2D8 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		18FDF0171F26D68E00DEA265 /* HQCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQCommon.swift; sourceTree = "<group>"; };
+		18FDF01A1F26E08F00DEA265 /* HQLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQLoginController.swift; sourceTree = "<group>"; };
 		4E50107DFCCC2E0D2CB5571D /* Pods_HQSwiftMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HQSwiftMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853B0572FB3945E0C96F19BD /* Pods-HQSwiftMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQSwiftMVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-HQSwiftMVVM/Pods-HQSwiftMVVM.release.xcconfig"; sourceTree = "<group>"; };
 		CA8FD2644BC1F7BC59747052 /* Pods-HQSwiftMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQSwiftMVVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HQSwiftMVVM/Pods-HQSwiftMVVM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				180EB8D51F0D26D700C86ADE /* Main */,
+				18FDF0191F26E03E00DEA265 /* Login */,
 				188157E61F14A77800498767 /* Vistor */,
 				180EB8D11F0D26D700C86ADE /* A */,
 				180EB8D21F0D26D700C86ADE /* B */,
@@ -246,6 +249,14 @@
 				18FDF0171F26D68E00DEA265 /* HQCommon.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		18FDF0191F26E03E00DEA265 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				18FDF01A1F26E08F00DEA265 /* HQLoginController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2DAA64E2881CAA6D05F3DBF3 /* Pods */ = {
@@ -405,6 +416,7 @@
 				188157EC1F14B09C00498767 /* HQImageView.swift in Sources */,
 				180EB8DA1F0D279700C86ADE /* HQNavigationController.swift in Sources */,
 				1859BD1F1F18C4A400A6717D /* HQNetWorkManager.swift in Sources */,
+				18FDF01B1F26E08F00DEA265 /* HQLoginController.swift in Sources */,
 				18CD67A61F0F5E4100C80A78 /* HQBarButtonItem.swift in Sources */,
 				188157E81F14A7D100498767 /* HQVistorView.swift in Sources */,
 				18FDF0181F26D68E00DEA265 /* HQCommon.swift in Sources */,
