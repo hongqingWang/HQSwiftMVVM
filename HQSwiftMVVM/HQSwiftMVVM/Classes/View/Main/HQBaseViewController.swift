@@ -60,7 +60,7 @@ extension HQBaseViewController {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: HQUserShouldLoginNotification), object: nil)
     }
     @objc fileprivate func register() {
-        print("bbb")
+        print("注册")
     }
 }
 

@@ -49,6 +49,12 @@ extension UIButton {
         sizeToFit()
     }
     
+    /// 标题 + 文字颜色 + 背景图片
+    ///
+    /// - Parameters:
+    ///   - hq_title: title
+    ///   - color: color
+    ///   - backImageName: backImageName
     convenience init(hq_title: String, color: UIColor, backImageName: String) {
         self.init()
         
@@ -59,51 +65,56 @@ extension UIButton {
         sizeToFit()
     }
     
-    /************************************************************************************************/
+    /// 标题 + 字号 + 背景色 + 高亮背景色
+    ///
+    /// - Parameters:
+    ///   - hq_title: title
+    ///   - fontSize: fontSize
+    ///   - normalBackColor: normalBackColor
+    ///   - highBackColor: highBackColor
+    ///   - size: size
+    convenience init(hq_title: String, fontSize: CGFloat = 16, normalBackColor: UIColor, highBackColor: UIColor, size: CGSize) {
+        self.init()
+        
+        setTitle(hq_title, for: .normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        
+        let normalIamge = UIImage(hq_color: normalBackColor, size: CGSize(width: size.width, height: size.height))
+        let hightImage = UIImage(hq_color: highBackColor, size: CGSize(width: size.width, height: size.height))
+        
+        setBackgroundImage(normalIamge, for: .normal)
+        setBackgroundImage(hightImage, for: .highlighted)
+
+        layer.cornerRadius = 3
+        clipsToBounds = true
+        
+        // 注意: 这里不写`sizeToFit()`那么`Button`就显示不出来
+        sizeToFit()
+    }
+}
+
+// MARK: - 创建`Button`的扩展方法
+extension UIButton {
     
-    //    /// 便利构造函数
-    //    ///
-    //    /// - parameter title:          title
-    //    /// - parameter color:          color
-    //    /// - parameter backImageName:  背景图像
-    //    ///
-    //    /// - returns: UIButton
-    //    convenience init(title: String, color: UIColor, backImageName: String) {
-    //        self.init()
-    //
-    //        setTitle(title, forState: .Normal)
-    //        setTitleColor(color, forState: .Normal)
-    //
-    //        setBackgroundImage(UIImage(named: backImageName), forState: .Normal)
-    //
-    //        sizeToFit()
-    //    }
-    //
-    //    /// 便利构造函数
-    //    ///
-    //    /// - parameter title:     title
-    //    /// - parameter color:     color
-    //    /// - parameter fontSize:  字体大小
-    //    /// - parameter imageName: 图像名称
-    //    /// - parameter backColor: 背景颜色（默认为nil）
-    //    ///
-    //    /// - returns: UIButton
-    //    convenience init(title: String, fontSize: CGFloat, color: UIColor, imageName: String?, backColor: UIColor? = nil) {
-    //        self.init()
-    //
-    //        setTitle(title, forState: .Normal)
-    //        setTitleColor(color, forState: .Normal)
-    //
-    //        if let imageName = imageName {
-    //            setImage(UIImage(named: imageName), forState: .Normal)
-    //        }
-    //
-    //        // 设置背景颜色
-    //        backgroundColor = backColor
-    //
-    //        titleLabel?.font = UIFont.systemFontOfSize(fontSize)
-    //
-    //        sizeToFit()
-    //    }
+    /// 通过颜色创建图片
+    ///
+    /// - Parameters:
+    ///   - color: color
+    ///   - size: size
+    /// - Returns: 固定颜色和尺寸的图片
+    fileprivate func creatImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        UIGraphicsBeginImageContext(rect.size)
+        
+        let context = UIGraphicsGetCurrentContext()
+        context?.setFillColor(color.cgColor)
+        context?.fill(rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image!
+    }
 }
 

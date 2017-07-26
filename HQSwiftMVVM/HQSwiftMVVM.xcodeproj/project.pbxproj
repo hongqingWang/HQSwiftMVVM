@@ -19,6 +19,7 @@
 		182F4D1A1F1D992E000EE8C5 /* HQNetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F4D191F1D992E000EE8C5 /* HQNetWorkManager+Extension.swift */; };
 		182F4D1C1F1DFE54000EE8C5 /* HQStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F4D1B1F1DFE54000EE8C5 /* HQStatus.swift */; };
 		182F4D1E1F1E02B4000EE8C5 /* HQStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F4D1D1F1E02B4000EE8C5 /* HQStatusListViewModel.swift */; };
+		183A3C491F279C8C00B6213A /* HQImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A3C481F279C8C00B6213A /* HQImage.swift */; };
 		1859BD1F1F18C4A400A6717D /* HQNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859BD1E1F18C4A400A6717D /* HQNetWorkManager.swift */; };
 		188157E81F14A7D100498767 /* HQVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188157E71F14A7D100498767 /* HQVistorView.swift */; };
 		188157EA1F14AEEB00498767 /* HQLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188157E91F14AEEB00498767 /* HQLable.swift */; };
@@ -32,6 +33,7 @@
 		18D649571F161AE40074D2D8 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D649561F161AE40074D2D8 /* main.json */; };
 		18FDF0181F26D68E00DEA265 /* HQCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF0171F26D68E00DEA265 /* HQCommon.swift */; };
 		18FDF01B1F26E08F00DEA265 /* HQLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF01A1F26E08F00DEA265 /* HQLoginController.swift */; };
+		18FDF01D1F26EC3D00DEA265 /* HQTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF01C1F26EC3D00DEA265 /* HQTextField.swift */; };
 		E1D1ED32D76817BBC6D105B0 /* Pods_HQSwiftMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E50107DFCCC2E0D2CB5571D /* Pods_HQSwiftMVVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,7 @@
 		182F4D191F1D992E000EE8C5 /* HQNetWorkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HQNetWorkManager+Extension.swift"; sourceTree = "<group>"; };
 		182F4D1B1F1DFE54000EE8C5 /* HQStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQStatus.swift; sourceTree = "<group>"; };
 		182F4D1D1F1E02B4000EE8C5 /* HQStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQStatusListViewModel.swift; sourceTree = "<group>"; };
+		183A3C481F279C8C00B6213A /* HQImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQImage.swift; sourceTree = "<group>"; };
 		1859BD1E1F18C4A400A6717D /* HQNetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQNetWorkManager.swift; sourceTree = "<group>"; };
 		188157E71F14A7D100498767 /* HQVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQVistorView.swift; sourceTree = "<group>"; };
 		188157E91F14AEEB00498767 /* HQLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQLable.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		18D649561F161AE40074D2D8 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
 		18FDF0171F26D68E00DEA265 /* HQCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQCommon.swift; sourceTree = "<group>"; };
 		18FDF01A1F26E08F00DEA265 /* HQLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQLoginController.swift; sourceTree = "<group>"; };
+		18FDF01C1F26EC3D00DEA265 /* HQTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQTextField.swift; sourceTree = "<group>"; };
 		4E50107DFCCC2E0D2CB5571D /* Pods_HQSwiftMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HQSwiftMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		853B0572FB3945E0C96F19BD /* Pods-HQSwiftMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQSwiftMVVM.release.xcconfig"; path = "Pods/Target Support Files/Pods-HQSwiftMVVM/Pods-HQSwiftMVVM.release.xcconfig"; sourceTree = "<group>"; };
 		CA8FD2644BC1F7BC59747052 /* Pods-HQSwiftMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HQSwiftMVVM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HQSwiftMVVM/Pods-HQSwiftMVVM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -208,12 +212,14 @@
 			isa = PBXGroup;
 			children = (
 				18CD67A11F0F5D9300C80A78 /* HQBundle.swift */,
+				18CD67A91F0F693500C80A78 /* HQColor.swift */,
+				18CD67A71F0F686C00C80A78 /* HQScreen.swift */,
 				18CD67A51F0F5E4100C80A78 /* HQBarButtonItem.swift */,
 				18CD67A31F0F5DC700C80A78 /* HQButton.swift */,
-				188157E91F14AEEB00498767 /* HQLable.swift */,
 				188157EB1F14B09C00498767 /* HQImageView.swift */,
-				18CD67A71F0F686C00C80A78 /* HQScreen.swift */,
-				18CD67A91F0F693500C80A78 /* HQColor.swift */,
+				183A3C481F279C8C00B6213A /* HQImage.swift */,
+				188157E91F14AEEB00498767 /* HQLable.swift */,
+				18FDF01C1F26EC3D00DEA265 /* HQTextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +419,8 @@
 				180EB8E21F0D28B900C86ADE /* HQCViewController.swift in Sources */,
 				180EB8E01F0D28B000C86ADE /* HQBViewController.swift in Sources */,
 				180EB8D81F0D274200C86ADE /* HQMainViewController.swift in Sources */,
+				18FDF01D1F26EC3D00DEA265 /* HQTextField.swift in Sources */,
+				183A3C491F279C8C00B6213A /* HQImage.swift in Sources */,
 				188157EC1F14B09C00498767 /* HQImageView.swift in Sources */,
 				180EB8DA1F0D279700C86ADE /* HQNavigationController.swift in Sources */,
 				1859BD1F1F18C4A400A6717D /* HQNetWorkManager.swift in Sources */,
