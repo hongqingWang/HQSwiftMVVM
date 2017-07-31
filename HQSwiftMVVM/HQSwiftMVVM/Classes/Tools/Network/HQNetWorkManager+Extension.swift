@@ -41,7 +41,7 @@ extension HQNetWorkManager {
     /// - Parameter completion: unreadCount
     func unreadCount(completion: @escaping (_ count: Int)->()) {
         
-        guard let uid = uid else {
+        guard let uid = userAccount.uid else {
             return
         }
         
@@ -56,5 +56,31 @@ extension HQNetWorkManager {
             
             completion(count ?? 0)
         }
+    }
+}
+
+// MARK: - 请求`Token`
+extension HQNetWorkManager {
+    
+    /// 根据`帐号`和`密码`获取`Token`
+    ///
+    /// - Parameters:
+    ///   - account: account
+    ///   - password: password
+    func loadAccessToken(account: String, password: String) {
+        
+        // 从`bundle`加载`data`
+        let path = Bundle.main.path(forResource: "userAccount.json", ofType: nil)
+        let data = NSData(contentsOfFile: path!)
+        
+        // 从`Bundle`加载配置的`userAccount.json`
+        guard let dict = try? JSONSerialization.jsonObject(with: data! as Data, options: []) as? [String: AnyObject]
+            else {
+                return
+        }
+        
+        // 直接用字典设置`userAccount`的属性
+        self.userAccount.yy_modelSet(with: dict ?? [:])
+        print(self.userAccount.token ?? "")
     }
 }

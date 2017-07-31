@@ -26,13 +26,6 @@ class HQLoginController: UIViewController {
         setupUI()
     }
     
-    @objc fileprivate func close() {
-        dismiss(animated: true, completion: nil)
-    }
-    @objc fileprivate func registe() {
-        print("注册")
-    }
-    
     // MARK: - 私有控件
     fileprivate lazy var logoImageView: UIImageView = UIImageView(hq_imageName: "logo")
     fileprivate lazy var accountTextField: UITextField = UITextField(hq_placeholder: "13122223333")
@@ -50,6 +43,25 @@ class HQLoginController: UIViewController {
     fileprivate lazy var loginButton: UIButton = UIButton(hq_title: "登录", normalBackColor: UIColor.orange, highBackColor: UIColor.hq_color(withHex: 0xB5751F), size: CGSize(width: UIScreen.hq_screenWidth() - (margin * 2), height: buttonHeight))
 }
 
+// MARK: - Target Action
+extension HQLoginController {
+    
+    /// 登录
+    @objc fileprivate func login() {
+        
+        HQNetWorkManager.shared.loadAccessToken(account: accountTextField.text ?? "", password: passwordTextField.text ?? "")
+//        dismiss(animated: false, completion: nil)
+    }
+    /// 注册
+    @objc fileprivate func registe() {
+        print("注册")
+    }
+    /// 关闭
+    @objc fileprivate func close() {
+        dismiss(animated: true, completion: nil)
+    }
+}
+
 // MARK: - 设置登录控制器界面
 extension HQLoginController {
     
@@ -61,6 +73,8 @@ extension HQLoginController {
         view.addSubview(passwordTextField)
         view.addSubview(carve02)
         view.addSubview(loginButton)
+        
+        loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
         
         logoImageView.snp.makeConstraints { (make) in
             make.top.equalTo(view).offset(margin * 7)
