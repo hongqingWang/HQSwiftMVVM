@@ -37,6 +37,18 @@ class HQBaseViewController: UIViewController {
         setupUI()
         
         HQNetWorkManager.shared.userLogon ? loadData() : ()
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(loginSuccess),
+            name: NSNotification.Name(rawValue: HQUserLoginSuccessNotification),
+            object: nil)
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: NSNotification.Name(rawValue: HQUserLoginSuccessNotification),
+            object: nil)
     }
     
     /// 加载数据,具体的实现由子类负责
@@ -55,6 +67,24 @@ class HQBaseViewController: UIViewController {
 // MARK: - 注册/登录 点击事件
 extension HQBaseViewController {
     
+    /// 登录成功
+    @objc fileprivate func loginSuccess(n: Notification) {
+        print("登录成功 \(n)")
+        
+        navItem.leftBarButtonItem = nil
+        navItem.rightBarButtonItem = nil
+        
+        // 在访问`view`的`getter`时,如果`view` == nil,会调用`loadView()`->`viewDidLoad()`
+        view = nil
+        
+        // 注销通知,因为重新执行`viewDidLoad()`会再次注册通知
+        NotificationCenter.default.removeObserver(
+            self,
+            name: NSNotification.Name(rawValue: HQUserShouldLoginNotification),
+            object: nil)
+    }
+    
+    /// 登录
     @objc fileprivate func login() {
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: HQUserShouldLoginNotification), object: nil)
@@ -89,6 +119,7 @@ extension HQBaseViewController {
                                                left: 0,
                                                bottom: tabBarController?.tabBar.bounds.height ?? 49,
                                                right: 0)
+        tableView?.scrollIndicatorInsets = tableView!.contentInset
         // 设置刷新控件
         refreshControl = UIRefreshControl()
         tableView?.addSubview(refreshControl!)

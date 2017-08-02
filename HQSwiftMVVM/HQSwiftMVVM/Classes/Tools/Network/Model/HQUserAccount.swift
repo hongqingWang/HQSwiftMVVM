@@ -39,7 +39,22 @@ class HQUserAccount: NSObject {
             return
         }
         
+        // 使用字典设置属性
         yy_modelSet(with: dict ?? [:])
+        
+        // 模拟日期过期
+//        expiresDate = Date(timeIntervalSinceNow: -3600 * 24 * 365 * 5)
+        
+        // 判断`token`是否过期
+        if expiresDate?.compare(Date()) != .orderedDescending {
+            print("账户过期")
+            // 清空`token`
+            token = nil
+            uid = nil
+            
+            // 删除文件
+            try? FileManager.default.removeItem(atPath: path)
+        }
     }
     
     /*

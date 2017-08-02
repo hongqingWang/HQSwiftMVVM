@@ -8,6 +8,8 @@
 
 import UIKit
 import UserNotifications
+import SVProgressHUD
+import AFNetworking
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         loadAppInfo()
-        setupNotification(application: application)
+        setupNotification()
+        setupAddtions()
         
         return true
     }
@@ -44,7 +47,7 @@ extension AppDelegate {
 
 extension AppDelegate {
     
-    fileprivate func setupNotification(application: UIApplication) {
+    fileprivate func setupNotification() {
         
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound, .carPlay]) { (sucess, error) in
@@ -53,7 +56,19 @@ extension AppDelegate {
         } else {
             // Fallback on earlier versions
             let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-            application.registerUserNotificationSettings(notificationSettings)
+            UIApplication.shared.registerUserNotificationSettings(notificationSettings)
         }
+    }
+}
+
+extension AppDelegate {
+    
+    fileprivate func setupAddtions() {
+        
+        // 设置`SVProgressHUD`最小解除时间
+        SVProgressHUD.setMinimumDismissTimeInterval(1)
+        
+        // 设置网络加载指示器
+        AFNetworkActivityIndicatorManager.shared().isEnabled = true
     }
 }

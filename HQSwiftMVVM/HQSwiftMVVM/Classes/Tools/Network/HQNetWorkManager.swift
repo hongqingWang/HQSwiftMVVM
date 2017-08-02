@@ -44,10 +44,14 @@ class HQNetWorkManager: AFHTTPSessionManager {
     /// 带`token`的网络请求方法
     func tokenRequest(method: HQHTTPMethod = .GET, URLString: String, parameters: [String: AnyObject]?, completion: @escaping (_ json: Any?, _ isSuccess: Bool)->()) {
         
+        // 判断`token`是否为`nil`,为`nil`直接返回,程序执行过程中,一般`token`不会为`nil`
         guard let token = userAccount.token else {
             
-            // FIXME: 发送通知,提示用户登录
+            // 发送通知,提示用户登录
             print("没有 token 需要重新登录")
+            NotificationCenter.default.post(
+                name: NSNotification.Name(rawValue: HQUserShouldLoginNotification),
+                object: nil)
             completion(nil, false)
             return
         }
@@ -82,6 +86,9 @@ class HQNetWorkManager: AFHTTPSessionManager {
                 print("token 过期了")
                 
                 // FIXME: 发送通知,提示用户再次登录
+                NotificationCenter.default.post(
+                    name: NSNotification.Name(rawValue: HQUserShouldLoginNotification),
+                    object: "bad token")
             }
             
             print("网络请求错误 \(error)")

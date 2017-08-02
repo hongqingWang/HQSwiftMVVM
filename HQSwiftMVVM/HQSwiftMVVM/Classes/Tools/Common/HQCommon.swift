@@ -11,4 +11,6 @@ import Foundation
 // MARK: - 全局通知定义
 /// 用户需要登录通知
 let HQUserShouldLoginNotification = "HQUserShouldLoginNotification"
+/// 用户登录成功通知
+let HQUserLoginSuccessNotification = "HQUserLoginSuccessNotification"
 		

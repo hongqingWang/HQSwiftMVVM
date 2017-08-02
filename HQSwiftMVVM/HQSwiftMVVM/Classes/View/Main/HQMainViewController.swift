@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class HQMainViewController: UITabBarController {
     
@@ -36,12 +37,30 @@ class HQMainViewController: UITabBarController {
         return .portrait
     }
     
-    // MARK: - 监听方法
+    // MARK: - 撰写按钮
+    fileprivate lazy var composeButton = UIButton(hq_imageName: "tabbar_compose_icon_add",
+                                              backImageName: "tabbar_compose_button")
+}
+
+// MARK: - Targrt Action
+extension HQMainViewController {
+    
+    // MARK: - 登录监听方法
     @objc fileprivate func login(n: Notification) {
         
         print("用户登录通知 \(n)")
-        let nav = UINavigationController(rootViewController: HQLoginController())
-        present(nav, animated: true, completion: nil)
+        
+        if n.object != nil {
+            SVProgressHUD.setDefaultMaskType(.gradient)
+            SVProgressHUD.showInfo(withStatus: "登录超时，请重新登录")
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            
+            SVProgressHUD.setDefaultMaskType(.clear)
+            let nav = UINavigationController(rootViewController: HQLoginController())
+            self.present(nav, animated: true, completion: nil)
+        }
     }
     
     // @objc 允许这个函数在运行时通过`OC`消息的消息机制被调用
@@ -54,10 +73,6 @@ class HQMainViewController: UITabBarController {
         vc.view.backgroundColor = UIColor.hq_randomColor()
         present(nav, animated: true, completion: nil)
     }
-    
-    // MARK: - 撰写按钮
-    fileprivate lazy var composeButton = UIButton(hq_imageName: "tabbar_compose_icon_add",
-                                              backImageName: "tabbar_compose_button")
 }
 
 // MARK: - UITabBarControllerDelegate
