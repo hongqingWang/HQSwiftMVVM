@@ -8,6 +8,8 @@
 
 import UIKit
 
+fileprivate let fileName = "useraccount.json"
+
 class HQUserAccount: NSObject {
     
     /// Token
@@ -25,6 +27,12 @@ class HQUserAccount: NSObject {
     
     override var description: String {
         return yy_modelDescription()
+    }
+    
+    override init() {
+        super.init()
+        
+        
     }
     
     /*
@@ -46,7 +54,7 @@ class HQUserAccount: NSObject {
             else {
                 return
         }
-        let filePath = String.hq_appendDocmentDirectory(fileName: "useraccount.json")
+        let filePath = String.hq_appendDocmentDirectory(fileName: fileName)
         
         // 3.写入磁盘
         (data as NSData).write(toFile: filePath, atomically: true)

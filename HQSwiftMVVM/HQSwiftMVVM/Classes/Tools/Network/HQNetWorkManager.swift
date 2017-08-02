@@ -35,7 +35,7 @@ class HQNetWorkManager: AFHTTPSessionManager {
     
     /// 用户账户的懒加载属性
     lazy var userAccount = HQUserAccount()
-    
+
     /// 用户登录标记(计算型属性)
     var userLogon: Bool {
         return userAccount.token != nil
