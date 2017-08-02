@@ -14,7 +14,7 @@ extension String {
     ///
     /// - Parameter fileName: fileName
     /// - Returns: DocumentDirectory 内文件路径
-    static func hq_appendDocmentDirectory(fileName: String) -> String {
+    static func hq_appendDocmentDirectory(fileName: String) -> String? {
         
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         return (path as NSString).appendingPathComponent(fileName)
@@ -24,7 +24,7 @@ extension String {
     ///
     /// - Parameter fileName: fileName
     /// - Returns: Cacher 内文件路径
-    static func hq_appendCachesDirectory(fileName: String) -> String {
+    static func hq_appendCachesDirectory(fileName: String) -> String? {
         
         let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0]
         return (path as NSString).appendingPathComponent(fileName)
@@ -34,7 +34,7 @@ extension String {
     ///
     /// - Parameter fileName: fileName
     /// - Returns: Tmp 内文件路径
-    static func hq_appendTmpDirectory(fileName: String) -> String {
+    static func hq_appendTmpDirectory(fileName: String) -> String? {
         
         let path = NSTemporaryDirectory()
         return (path as NSString).appendingPathComponent(fileName)

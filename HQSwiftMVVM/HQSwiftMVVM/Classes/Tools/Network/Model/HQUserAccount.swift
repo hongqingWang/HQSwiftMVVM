@@ -32,7 +32,14 @@ class HQUserAccount: NSObject {
     override init() {
         super.init()
         
+        guard let path = String.hq_appendDocmentDirectory(fileName: fileName),
+            let data = NSData(contentsOfFile: path),
+            let dict = try? JSONSerialization.jsonObject(with: data as Data, options: []) as? [String: AnyObject]
+            else {
+            return
+        }
         
+        yy_modelSet(with: dict ?? [:])
     }
     
     /*
@@ -50,11 +57,11 @@ class HQUserAccount: NSObject {
         dict.removeValue(forKey: "expires_in")
         
         // 2.字典序列化`data`
-        guard let data = try? JSONSerialization.data(withJSONObject: dict, options: [])
+        guard let data = try? JSONSerialization.data(withJSONObject: dict, options: []),
+            let filePath = String.hq_appendDocmentDirectory(fileName: fileName)
             else {
                 return
         }
-        let filePath = String.hq_appendDocmentDirectory(fileName: fileName)
         
         // 3.写入磁盘
         (data as NSData).write(toFile: filePath, atomically: true)
