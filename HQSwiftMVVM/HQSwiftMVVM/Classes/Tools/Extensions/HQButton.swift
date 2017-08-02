@@ -8,6 +8,45 @@
 
 import UIKit
 
+/// 获取验证码按钮
+class HQButton: UIButton {
+    
+    fileprivate var hq_timer: Timer?
+    fileprivate var hq_remindTime: NSInteger?
+    
+    func timeDown(time: NSInteger) {
+        
+        isEnabled = false
+        
+        if #available(iOS 10.0, *) {
+            hq_timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (timer) in
+                
+                self.timeFire()
+            })
+        } else {
+            // Fallback on earlier versions
+            hq_timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeFire), userInfo: nil, repeats: true)
+        }
+        hq_remindTime = time
+    }
+    
+    @objc fileprivate func timeFire() {
+        
+        if hq_remindTime! > 1 {
+            
+            hq_remindTime! -= 1
+            setTitle("\(hq_remindTime!)s后重新获取", for: .disabled)
+            print("\(hq_remindTime!)s后重新获取")
+        } else {
+            
+            isEnabled = true
+            hq_timer?.invalidate()
+            hq_timer = nil
+            setTitle("获取验证码", for: .normal)
+        }
+    }
+}
+
 extension UIButton {
     
     /// 图片 + 背景图片
@@ -117,4 +156,3 @@ extension UIButton {
         return image!
     }
 }
-

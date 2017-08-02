@@ -48,7 +48,7 @@ extension AppDelegate {
         
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound, .carPlay]) { (sucess, error) in
-                print("授权" + (sucess ? "成功" : "失败"))
+//                print("授权" + (sucess ? "成功" : "失败"))
             }
         } else {
             // Fallback on earlier versions

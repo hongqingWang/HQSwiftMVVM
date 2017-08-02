@@ -81,6 +81,7 @@ extension HQNetWorkManager {
         
         // 直接用字典设置`userAccount`的属性
         self.userAccount.yy_modelSet(with: dict ?? [:])
-        print(self.userAccount.token ?? "")
+        
+        self.userAccount.saveAccount()
     }
 }

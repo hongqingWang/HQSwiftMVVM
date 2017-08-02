@@ -26,6 +26,7 @@
 		188157E81F14A7D100498767 /* HQVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188157E71F14A7D100498767 /* HQVistorView.swift */; };
 		188157EA1F14AEEB00498767 /* HQLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188157E91F14AEEB00498767 /* HQLable.swift */; };
 		188157EC1F14B09C00498767 /* HQImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188157EB1F14B09C00498767 /* HQImageView.swift */; };
+		18C87E211F319FDC00CB91EB /* HQPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C87E201F319FDC00CB91EB /* HQPath.swift */; };
 		18CD67821F0F198E00C80A78 /* HQDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */; };
 		18CD67A21F0F5D9300C80A78 /* HQBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A11F0F5D9300C80A78 /* HQBundle.swift */; };
 		18CD67A41F0F5DC700C80A78 /* HQButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A31F0F5DC700C80A78 /* HQButton.swift */; };
@@ -61,6 +62,7 @@
 		188157E71F14A7D100498767 /* HQVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQVistorView.swift; sourceTree = "<group>"; };
 		188157E91F14AEEB00498767 /* HQLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQLable.swift; sourceTree = "<group>"; };
 		188157EB1F14B09C00498767 /* HQImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQImageView.swift; sourceTree = "<group>"; };
+		18C87E201F319FDC00CB91EB /* HQPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQPath.swift; sourceTree = "<group>"; };
 		18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQDemoViewController.swift; sourceTree = "<group>"; };
 		18CD67A11F0F5D9300C80A78 /* HQBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQBundle.swift; sourceTree = "<group>"; };
 		18CD67A31F0F5DC700C80A78 /* HQButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQButton.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				183A3C481F279C8C00B6213A /* HQImage.swift */,
 				188157E91F14AEEB00498767 /* HQLable.swift */,
 				18FDF01C1F26EC3D00DEA265 /* HQTextField.swift */,
+				18C87E201F319FDC00CB91EB /* HQPath.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				182F4D1A1F1D992E000EE8C5 /* HQNetWorkManager+Extension.swift in Sources */,
 				18CD67AA1F0F693500C80A78 /* HQColor.swift in Sources */,
 				18CD67A41F0F5DC700C80A78 /* HQButton.swift in Sources */,
+				18C87E211F319FDC00CB91EB /* HQPath.swift in Sources */,
 				182F4D1E1F1E02B4000EE8C5 /* HQStatusListViewModel.swift in Sources */,
 				18CD67A81F0F686C00C80A78 /* HQScreen.swift in Sources */,
 				18CD67821F0F198E00C80A78 /* HQDemoViewController.swift in Sources */,
