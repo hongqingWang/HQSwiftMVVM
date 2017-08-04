@@ -65,7 +65,6 @@ extension HQLoginController {
                 // 关闭窗口
                 close()
             }
-            
         }
     }
     /// 注册

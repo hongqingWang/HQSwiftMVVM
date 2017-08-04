@@ -10,6 +10,22 @@ import UIKit
 
 extension UIColor {
     
+    /// 普通字体颜色
+    open class var hq_textColor: UIColor {
+        
+        get {
+            return UIColor.lightGray
+        }
+    }
+    
+    /// 标题字体颜色
+    open class var hq_titleTextColor: UIColor {
+        
+        get {
+            return UIColor.darkGray
+        }
+    }
+    
     /// 随机色
     ///
     /// - Returns: 随机的颜色

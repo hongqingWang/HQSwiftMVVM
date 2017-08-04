@@ -30,8 +30,10 @@ class HQAViewController: HQBaseViewController {
     
     @objc fileprivate func showFriends() {
         
-        let vc = HQDemoViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        HQNetWorkManager.shared.userAccount.token = "aaa"
+        
+//        let vc = HQDemoViewController()
+//        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

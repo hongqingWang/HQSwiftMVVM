@@ -80,7 +80,7 @@ extension HQBaseViewController {
         // 注销通知,因为重新执行`viewDidLoad()`会再次注册通知
         NotificationCenter.default.removeObserver(
             self,
-            name: NSNotification.Name(rawValue: HQUserShouldLoginNotification),
+            name: NSNotification.Name(rawValue: HQUserLoginSuccessNotification),
             object: nil)
     }
     
