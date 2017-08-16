@@ -50,12 +50,17 @@ extension HQMainViewController {
         
         print("用户登录通知 \(n)")
         
+        var when = DispatchTime.now()
+        
         if n.object != nil {
             SVProgressHUD.setDefaultMaskType(.gradient)
             SVProgressHUD.showInfo(withStatus: "登录超时，请重新登录")
+            
+            // 修改延迟时间
+            when = DispatchTime.now() + 2
         }
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: when) {
             
             SVProgressHUD.setDefaultMaskType(.clear)
             let nav = UINavigationController(rootViewController: HQLoginController())

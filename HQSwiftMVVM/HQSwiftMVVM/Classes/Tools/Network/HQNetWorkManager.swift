@@ -85,7 +85,7 @@ class HQNetWorkManager: AFHTTPSessionManager {
             if (task?.response as? HTTPURLResponse)?.statusCode == 403 {
                 print("token 过期了")
                 
-                // FIXME: 发送通知,提示用户再次登录
+                // 发送通知,提示用户再次登录
                 NotificationCenter.default.post(
                     name: NSNotification.Name(rawValue: HQUserShouldLoginNotification),
                     object: "bad token")

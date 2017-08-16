@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         loadAppInfo()
         setupNotification()
         setupAddtions()
-        
+        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
         return true
     }
 }

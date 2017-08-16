@@ -47,7 +47,7 @@ class HQStatusListViewModel {
             }
             print("刷新到 \(array.count) 条数据")
             
-            // FIXME: 拼接数据
+            // 拼接数据
             if pullup {
                 // 上拉刷新结束后,将数据拼接在数组的末尾
                 self.statusList += array
