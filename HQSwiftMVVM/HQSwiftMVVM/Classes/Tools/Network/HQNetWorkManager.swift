@@ -26,16 +26,8 @@ class HQNetWorkManager: AFHTTPSessionManager {
         return instance
     }()
     
-//    /// token
-////    var accessToken: String? = "2.00It5tsGKXtWQEfb6d3a2738ImMUAD"
-//    var accessToken: String? //= "2.00It5tsGQ6eDJE4ecbf2d825DCpbBD"
-//    
-//    /// 用户微博`id`
-//    var uid: String? = ""
-    
     /// 用户账户的懒加载属性
     lazy var userAccount = HQUserAccount()
-
     /// 用户登录标记(计算型属性)
     var userLogon: Bool {
         return userAccount.token != nil

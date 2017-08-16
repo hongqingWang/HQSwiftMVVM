@@ -13,7 +13,7 @@ fileprivate let fileName = "useraccount.json"
 class HQUserAccount: NSObject {
     
     /// Token
-    var token: String? //= "2.00It5tsGKXtWQEfb6d3a2738ImMUAD"
+    var token: String?
     /// 用户代号
     var uid: String?
     /// `Token`的生命周期,单位是`秒`
@@ -24,6 +24,12 @@ class HQUserAccount: NSObject {
     }
     /// 过期日期
     var expiresDate: Date?
+    
+    /// 用户昵称
+    var screen_name: String?
+    /// 用户头像地址(大图),180x180
+    var avatar_large: String?
+    
     
     override var description: String {
         return yy_modelDescription()
@@ -40,6 +46,7 @@ class HQUserAccount: NSObject {
         }
         
         // 使用字典设置属性
+        /********** 用户是否登录的关键代码 **********/
         yy_modelSet(with: dict ?? [:])
         
         // 模拟日期过期

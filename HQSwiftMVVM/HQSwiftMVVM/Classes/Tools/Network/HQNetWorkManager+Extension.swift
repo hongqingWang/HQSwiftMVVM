@@ -32,15 +32,15 @@ extension HQNetWorkManager {
         // 直接用字典设置`userAccount`的属性
         self.userAccount.yy_modelSet(with: dict ?? [:])
         
-        self.userAccount.saveAccount()
-        
         // 加载用户信息
         self.loadUserInfo { (dict) in
-            print(dict)
+            
+            self.userAccount.yy_modelSet(with: dict)
+            self.userAccount.saveAccount()
+            
             // 用户信息加载完成再执行，首页数据加载的完成回调
             completion(true)
         }
-        
     }
 }
 
