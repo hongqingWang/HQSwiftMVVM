@@ -47,6 +47,36 @@ class HQButton: UIButton {
     }
 }
 
+/// 文字在左、图片在右的 Button
+class HQTitleButton: UIButton {
+    
+    /// 重载构造函数
+    ///
+    /// - Parameter title: title 如果是 nil,就显示首页
+    /// - Parameter title: title 如果不是 nil,显示 title 和 箭头
+    init(title: String?) {
+        super.init(frame: CGRect())
+        
+        if title == nil {
+            setTitle("首页", for: .normal)
+        } else {
+            setTitle(title!, for: .normal)
+            setImage(UIImage(named: "nav_arrow_down"), for: .normal)
+            setImage(UIImage(named: "nav_arrow_up"), for: .selected)
+        }
+        
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        setTitleColor(UIColor.darkGray, for: .normal)
+        
+        // 设置大小
+        sizeToFit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 extension UIButton {
     
     /// 图片 + 背景图片

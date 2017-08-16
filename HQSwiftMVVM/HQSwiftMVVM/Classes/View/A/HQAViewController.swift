@@ -68,16 +68,17 @@ extension HQAViewController {
     /// 设置导航栏标题演示
     fileprivate func setupNavTitle() {
         
-        let btn = UIButton(hq_title: "王红庆", fontSize: 17, normalColor: UIColor.darkGray, highlightedColor: UIColor.red)
-        btn.setImage(UIImage(named: "nav_arrow_down"), for: .normal)
-        btn.setImage(UIImage(named: "nav_arrow_up"), for: .selected)
+        let title = HQNetWorkManager.shared.userAccount.screen_name
+        
+        let btn = HQTitleButton(title: title)
+        
         navItem.titleView = btn
         
         btn.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
     }
-    
+
     @objc fileprivate func clickTitleButton(btn: UIButton) {
-    
+
         btn.isSelected = !btn.isSelected
     }
 }
