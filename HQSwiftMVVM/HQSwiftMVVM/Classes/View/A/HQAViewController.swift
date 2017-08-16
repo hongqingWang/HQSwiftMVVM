@@ -61,5 +61,23 @@ extension HQAViewController {
         
         navItem.leftBarButtonItem = UIBarButtonItem(hq_title: "好友", target: self, action: #selector(showFriends))
         tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
+        
+        setupNavTitle()
+    }
+    
+    /// 设置导航栏标题演示
+    fileprivate func setupNavTitle() {
+        
+        let btn = UIButton(hq_title: "王红庆", fontSize: 17, normalColor: UIColor.darkGray, highlightedColor: UIColor.red)
+        btn.setImage(UIImage(named: "nav_arrow_down"), for: .normal)
+        btn.setImage(UIImage(named: "nav_arrow_up"), for: .selected)
+        navItem.titleView = btn
+        
+        btn.addTarget(self, action: #selector(clickTitleButton), for: .touchUpInside)
+    }
+    
+    @objc fileprivate func clickTitleButton(btn: UIButton) {
+    
+        btn.isSelected = !btn.isSelected
     }
 }
