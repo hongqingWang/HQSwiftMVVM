@@ -13,4 +13,10 @@ import Foundation
 let HQUserShouldLoginNotification = "HQUserShouldLoginNotification"
 /// 用户登录成功通知
 let HQUserLoginSuccessNotification = "HQUserLoginSuccessNotification"
-		
+
+
+// MARK: - 接口
+/// 首页微博
+let HQHomeUrlString = "https://api.weibo.com/2/statuses/home_timeline.json"
+/// 个人信息
+let HQUserInfoUrlString = "https://api.weibo.com/2/users/show.json"

@@ -63,7 +63,7 @@ extension HQLoginController {
                     name: NSNotification.Name(rawValue: HQUserLoginSuccessNotification),
                     object: nil)
                 // 关闭窗口
-                close()
+                self.close()
             }
         }
     }
