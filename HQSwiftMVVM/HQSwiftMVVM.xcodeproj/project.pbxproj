@@ -122,6 +122,7 @@
 		180EB8CD1F0D26D700C86ADE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				18881D601F45949A0079F11E /* NewFeature */,
 				180EB8CE1F0D26D700C86ADE /* Model */,
 				180EB8D01F0D26D700C86ADE /* View */,
 				180EB8D61F0D26D700C86ADE /* ViewModel */,
@@ -256,6 +257,13 @@
 				188157E71F14A7D100498767 /* HQVistorView.swift */,
 			);
 			path = Vistor;
+			sourceTree = "<group>";
+		};
+		18881D601F45949A0079F11E /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		18CD67801F0F191300C80A78 /* Test */ = {
