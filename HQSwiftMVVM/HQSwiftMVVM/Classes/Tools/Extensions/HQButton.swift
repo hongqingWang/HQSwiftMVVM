@@ -60,7 +60,7 @@ class HQTitleButton: UIButton {
         if title == nil {
             setTitle("首页", for: .normal)
         } else {
-            setTitle(title!, for: .normal)
+            setTitle(title! + " ", for: .normal)
             setImage(UIImage(named: "nav_arrow_down"), for: .normal)
             setImage(UIImage(named: "nav_arrow_up"), for: .selected)
         }
@@ -74,6 +74,27 @@ class HQTitleButton: UIButton {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    /// 重新布局子视图
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        // 判断`label`和`imageView`是否同时存在
+        guard let titleLabel = titleLabel,
+            let imageView = imageView
+            else {
+                return
+        }
+        
+        // 将`titleLabel`的`x`向左移动`imageView`的`width`,值得注意的是,这里我们需要将`width / 2`
+        titleEdgeInsets = UIEdgeInsetsMake(0, -imageView.bounds.width, 0, imageView.bounds.width)
+        // 将`imageView`的`x`向右移动`titleLabel`的`width`,值得注意的是,这里我们需要将`width / 2`
+        imageEdgeInsets = UIEdgeInsetsMake(0, titleLabel.bounds.width, 0, -titleLabel.bounds.width)
+        /********** 下面这种做法不推荐 **********/
+        // 会有问题
+//        titleLabel.frame = titleLabel.frame.offsetBy(dx: -imageView.bounds.width, dy: 0)
+//        imageView.frame = imageView.frame.offsetBy(dx: titleLabel.bounds.width, dy: 0)
     }
 }
 
