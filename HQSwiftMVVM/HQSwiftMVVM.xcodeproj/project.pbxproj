@@ -26,6 +26,8 @@
 		188157E81F14A7D100498767 /* HQVistorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188157E71F14A7D100498767 /* HQVistorView.swift */; };
 		188157EA1F14AEEB00498767 /* HQLable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188157E91F14AEEB00498767 /* HQLable.swift */; };
 		188157EC1F14B09C00498767 /* HQImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188157EB1F14B09C00498767 /* HQImageView.swift */; };
+		18881D651F4596A50079F11E /* HQWelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18881D641F4596A50079F11E /* HQWelcomeView.swift */; };
+		18881D671F4596D90079F11E /* HQNewFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18881D661F4596D90079F11E /* HQNewFeatureView.swift */; };
 		18C87E211F319FDC00CB91EB /* HQPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C87E201F319FDC00CB91EB /* HQPath.swift */; };
 		18CD67821F0F198E00C80A78 /* HQDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */; };
 		18CD67A21F0F5D9300C80A78 /* HQBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A11F0F5D9300C80A78 /* HQBundle.swift */; };
@@ -62,6 +64,8 @@
 		188157E71F14A7D100498767 /* HQVistorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQVistorView.swift; sourceTree = "<group>"; };
 		188157E91F14AEEB00498767 /* HQLable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQLable.swift; sourceTree = "<group>"; };
 		188157EB1F14B09C00498767 /* HQImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQImageView.swift; sourceTree = "<group>"; };
+		18881D641F4596A50079F11E /* HQWelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQWelcomeView.swift; sourceTree = "<group>"; };
+		18881D661F4596D90079F11E /* HQNewFeatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQNewFeatureView.swift; sourceTree = "<group>"; };
 		18C87E201F319FDC00CB91EB /* HQPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQPath.swift; sourceTree = "<group>"; };
 		18CD67811F0F198D00C80A78 /* HQDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQDemoViewController.swift; sourceTree = "<group>"; };
 		18CD67A11F0F5D9300C80A78 /* HQBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQBundle.swift; sourceTree = "<group>"; };
@@ -262,8 +266,34 @@
 		18881D601F45949A0079F11E /* NewFeature */ = {
 			isa = PBXGroup;
 			children = (
+				18881D611F45967C0079F11E /* Model */,
+				18881D621F45967C0079F11E /* View */,
+				18881D631F45967C0079F11E /* ViewModel */,
 			);
 			path = NewFeature;
+			sourceTree = "<group>";
+		};
+		18881D611F45967C0079F11E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18881D621F45967C0079F11E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18881D641F4596A50079F11E /* HQWelcomeView.swift */,
+				18881D661F4596D90079F11E /* HQNewFeatureView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18881D631F45967C0079F11E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		18CD67801F0F191300C80A78 /* Test */ = {
@@ -433,9 +463,11 @@
 			files = (
 				18CD67A21F0F5D9300C80A78 /* HQBundle.swift in Sources */,
 				188157EA1F14AEEB00498767 /* HQLable.swift in Sources */,
+				18881D651F4596A50079F11E /* HQWelcomeView.swift in Sources */,
 				182F4D1C1F1DFE54000EE8C5 /* HQStatus.swift in Sources */,
 				180EB8DE1F0D289D00C86ADE /* HQAViewController.swift in Sources */,
 				182F4D1A1F1D992E000EE8C5 /* HQNetWorkManager+Extension.swift in Sources */,
+				18881D671F4596D90079F11E /* HQNewFeatureView.swift in Sources */,
 				18CD67AA1F0F693500C80A78 /* HQColor.swift in Sources */,
 				18CD67A41F0F5DC700C80A78 /* HQButton.swift in Sources */,
 				18C87E211F319FDC00CB91EB /* HQPath.swift in Sources */,
