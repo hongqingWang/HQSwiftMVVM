@@ -21,6 +21,9 @@ class HQMainViewController: UITabBarController {
         setupComposeButton()
         setupTimer()
         
+        // 新特性
+        setupNewFeatureView()
+        
         delegate = self
         
         NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name(rawValue: HQUserShouldLoginNotification), object: nil)
@@ -77,6 +80,41 @@ extension HQMainViewController {
         
         vc.view.backgroundColor = UIColor.hq_randomColor()
         present(nav, animated: true, completion: nil)
+    }
+}
+
+// MARK: - 新特性
+extension HQMainViewController {
+    
+    fileprivate func setupNewFeatureView() {
+    
+        // 如果用户没有登录,则不显示新特性界面,直接返回
+        if !HQNetWorkManager.shared.userLogon {
+            return
+        }
+        
+        let v = isNewVersion ? HQNewFeatureView() : HQWelcomeView()
+        
+        v.frame = view.bounds
+        
+        view.addSubview(v)
+    }
+    
+    /// 计算型属性,不占用存储空间
+    fileprivate var isNewVersion: Bool {
+        
+        // 获取当前版本号
+        let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+        
+        // 拼接保存到沙盒的路径
+        let path = String.hq_appendDocmentDirectory(fileName: "version") ?? ""
+        let savedVersion = (try? String(contentsOfFile: path)) ?? ""
+        
+        // 将当前版本保存到沙盒路径下
+        try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
+        
+        // 比较两个版本是否相同
+        return currentVersion != savedVersion
     }
 }
 
