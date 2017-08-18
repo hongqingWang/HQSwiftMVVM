@@ -95,7 +95,7 @@ extension HQMainViewController {
         
         let v = isNewVersion ? HQNewFeatureView() : HQWelcomeView()
         
-        v.frame = view.bounds
+//        v.frame = view.bounds
         
         view.addSubview(v)
     }
