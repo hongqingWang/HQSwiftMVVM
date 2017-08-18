@@ -15,13 +15,16 @@ class HQWelcomeView: UIView {
     fileprivate lazy var avatarImageView: UIImageView = {
         
         let iv = UIImageView(hq_imageName: "avatar_default_big")
-        
         iv.layer.cornerRadius = 45
         iv.layer.masksToBounds = true
-        
         return iv
     }()
-    fileprivate lazy var welcomeLabel: UILabel = UILabel(hq_title: "欢迎归来", fontSize: 18, color: UIColor.hq_titleTextColor)
+    fileprivate lazy var welcomeLabel: UILabel = {
+       
+        let label = UILabel(hq_title: "欢迎归来", fontSize: 18, color: UIColor.hq_titleTextColor)
+        label.alpha = 0
+        return label
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -46,6 +49,9 @@ extension HQWelcomeView {
         // 将代码布局的约束都创建好并显示出来，然后再进行下一步的更新动画
         layoutIfNeeded()
         
+        /// 设置头像
+        setAvatar()
+        
         avatarImageView.snp.updateConstraints { (make) in
             make.bottom.equalTo(self).offset(-bounds.size.height + 200)
         }
@@ -59,7 +65,22 @@ extension HQWelcomeView {
                         self.layoutIfNeeded()
         }) { (_) in
             
+            UIView.animate(withDuration: 1.0,
+                           animations: { 
+                            self.welcomeLabel.alpha = 1
+            }, completion: { (_) in
+                self.removeFromSuperview()
+            })
         }
+    }
+    
+    /// 设置头像
+    fileprivate func setAvatar() {
+        
+        guard let urlString = HQNetWorkManager.shared.userAccount.avatar_large else {
+            return
+        }
+        avatarImageView.hq_setImage(urlString: urlString, placeholderImage: UIImage(named: "avatar_default_big"))
     }
 }
 
