@@ -95,8 +95,6 @@ extension HQMainViewController {
         
         let v = isNewVersion ? HQNewFeatureView() : HQWelcomeView()
         
-//        v.frame = view.bounds
-        
         view.addSubview(v)
     }
     
@@ -114,7 +112,8 @@ extension HQMainViewController {
         try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         // 比较两个版本是否相同
-        return currentVersion != savedVersion
+//        return currentVersion != savedVersion
+        return currentVersion == savedVersion
     }
 }
 
