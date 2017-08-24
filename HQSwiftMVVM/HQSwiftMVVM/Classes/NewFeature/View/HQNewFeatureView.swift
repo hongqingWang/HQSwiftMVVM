@@ -42,7 +42,38 @@ class HQNewFeatureView: UIView {
 extension HQNewFeatureView {
     
     @objc fileprivate func enter() {
-        print("enter")
+        removeFromSuperview()
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension HQNewFeatureView: UIScrollViewDelegate {
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        // 滚动到最后一个空白页面,将新特性页面从父视图移除
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width)
+        
+        if page == scrollView.subviews.count {
+            removeFromSuperview()
+        }
+        // 如果不是倒数第二页,那么就隐藏`startButton`按钮
+        startButton.isHidden = (page != scrollView.subviews.count - 1)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        // 一旦滚动,隐藏按钮
+        startButton.isHidden = true
+        
+        // 设置当前的偏移量,+0.5是为了处理`scrollView`滚动超过屏幕一半的时候,`pageControl`也滚动到下一页
+        let page = Int(scrollView.contentOffset.x / scrollView.bounds.width + 0.5)
+        
+        // 设置分页控件
+        pageControl.currentPage = page
+        
+        // 分页控件的隐藏,滚动到最后一页的时候
+        pageControl.isHidden = (page == scrollView.subviews.count)
     }
 }
 
@@ -93,6 +124,6 @@ extension HQNewFeatureView {
         scrollView.isPagingEnabled = true
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.showsVerticalScrollIndicator = false
-        
+        scrollView.delegate = self
     }
 }
