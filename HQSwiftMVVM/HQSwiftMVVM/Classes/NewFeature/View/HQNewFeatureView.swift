@@ -18,6 +18,7 @@ class HQNewFeatureView: UIView {
         pageControl.numberOfPages = 4
         pageControl.currentPageIndicatorTintColor = UIColor.orange
         pageControl.pageIndicatorTintColor = UIColor.black
+        pageControl.isUserInteractionEnabled = false
         return pageControl
     }()
     fileprivate lazy var scrollView: UIScrollView = {

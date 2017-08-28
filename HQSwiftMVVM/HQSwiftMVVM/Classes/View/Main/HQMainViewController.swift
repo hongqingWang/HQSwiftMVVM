@@ -112,8 +112,7 @@ extension HQMainViewController {
         try? currentVersion.write(toFile: path, atomically: true, encoding: .utf8)
         
         // 比较两个版本是否相同
-//        return currentVersion != savedVersion
-        return currentVersion == savedVersion
+        return currentVersion != savedVersion
     }
 }
 
