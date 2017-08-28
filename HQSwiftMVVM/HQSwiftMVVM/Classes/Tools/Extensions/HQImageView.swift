@@ -11,7 +11,7 @@ import SDWebImage
 
 extension UIImageView {
     
-    /// 图片名称
+    /// 根据图片名称快速创建`ImageView`
     ///
     /// - Parameter hq_imageName: imageName
     convenience init(hq_imageName: String) {

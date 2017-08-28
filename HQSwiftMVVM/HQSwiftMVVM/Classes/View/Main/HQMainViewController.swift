@@ -137,6 +137,10 @@ extension UITabBarController: UITabBarControllerDelegate {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: { 
                 vc.loadData()
             })
+            
+            // 清除`tabBarItem`的`badgeNumber`
+            vc.tabBarItem.badgeValue = nil
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
         
         return !viewController.isMember(of: UIViewController.classForCoder())
@@ -147,7 +151,7 @@ extension UITabBarController: UITabBarControllerDelegate {
 extension HQMainViewController {
     
     fileprivate func setupTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 60.0 * 10, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 60 * 10, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
     }
     
     /// 定时器触发方法
