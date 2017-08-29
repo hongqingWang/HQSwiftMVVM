@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import SVProgressHUD
 
-fileprivate let margin: CGFloat = 16.0
+fileprivate let loginMargin: CGFloat = 16
 fileprivate let buttonHeight: CGFloat = 40.0
 
 class HQLoginController: UIViewController {
@@ -41,7 +41,7 @@ class HQLoginController: UIViewController {
         carve.backgroundColor = UIColor.lightGray
         return carve
     }()
-    fileprivate lazy var loginButton: UIButton = UIButton(hq_title: "登录", normalBackColor: UIColor.orange, highBackColor: UIColor.hq_color(withHex: 0xB5751F), size: CGSize(width: UIScreen.hq_screenWidth() - (margin * 2), height: buttonHeight))
+    fileprivate lazy var loginButton: UIButton = UIButton(hq_title: "登录", normalBackColor: UIColor.orange, highBackColor: UIColor.hq_color(withHex: 0xB5751F), size: CGSize(width: UIScreen.hq_screenWidth() - (loginMargin * 2), height: buttonHeight))
 }
 
 // MARK: - Target Action
@@ -92,13 +92,13 @@ extension HQLoginController {
         loginButton.addTarget(self, action: #selector(login), for: .touchUpInside)
         
         logoImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(view).offset(margin * 7)
+            make.top.equalTo(view).offset(loginMargin * 7)
             make.centerX.equalTo(view)
         }
         accountTextField.snp.makeConstraints { (make) in
-            make.top.equalTo(logoImageView.snp.bottom).offset(margin * 2)
-            make.left.equalTo(view).offset(margin)
-            make.right.equalTo(view).offset(-margin)
+            make.top.equalTo(logoImageView.snp.bottom).offset(loginMargin * 2)
+            make.left.equalTo(view).offset(loginMargin)
+            make.right.equalTo(view).offset(-loginMargin)
             make.height.equalTo(buttonHeight)
         }
         carve01.snp.makeConstraints { (make) in
@@ -120,7 +120,7 @@ extension HQLoginController {
             make.height.equalTo(carve01)
         }
         loginButton.snp.makeConstraints { (make) in
-            make.top.equalTo(passwordTextField.snp.bottom).offset(margin * 2)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(loginMargin * 2)
             make.left.equalTo(passwordTextField)
             make.right.equalTo(passwordTextField)
             make.height.equalTo(passwordTextField)

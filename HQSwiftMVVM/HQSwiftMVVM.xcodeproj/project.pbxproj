@@ -19,6 +19,8 @@
 		182F4D1A1F1D992E000EE8C5 /* HQNetWorkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F4D191F1D992E000EE8C5 /* HQNetWorkManager+Extension.swift */; };
 		182F4D1C1F1DFE54000EE8C5 /* HQStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F4D1B1F1DFE54000EE8C5 /* HQStatus.swift */; };
 		182F4D1E1F1E02B4000EE8C5 /* HQStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F4D1D1F1E02B4000EE8C5 /* HQStatusListViewModel.swift */; };
+		1831B3961F545EF300239992 /* HQACell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831B3951F545EF300239992 /* HQACell.swift */; };
+		1831B3981F545F4F00239992 /* HQACellTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1831B3971F545F4F00239992 /* HQACellTopView.swift */; };
 		183A3C491F279C8C00B6213A /* HQImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183A3C481F279C8C00B6213A /* HQImage.swift */; };
 		1859BD1F1F18C4A400A6717D /* HQNetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1859BD1E1F18C4A400A6717D /* HQNetWorkManager.swift */; };
 		1867743C1F2F6A4500FFA099 /* HQUserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1867743B1F2F6A4500FFA099 /* HQUserAccount.swift */; };
@@ -57,6 +59,8 @@
 		182F4D191F1D992E000EE8C5 /* HQNetWorkManager+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HQNetWorkManager+Extension.swift"; sourceTree = "<group>"; };
 		182F4D1B1F1DFE54000EE8C5 /* HQStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQStatus.swift; sourceTree = "<group>"; };
 		182F4D1D1F1E02B4000EE8C5 /* HQStatusListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQStatusListViewModel.swift; sourceTree = "<group>"; };
+		1831B3951F545EF300239992 /* HQACell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQACell.swift; sourceTree = "<group>"; };
+		1831B3971F545F4F00239992 /* HQACellTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQACellTopView.swift; sourceTree = "<group>"; };
 		183A3C481F279C8C00B6213A /* HQImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQImage.swift; sourceTree = "<group>"; };
 		1859BD1E1F18C4A400A6717D /* HQNetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQNetWorkManager.swift; sourceTree = "<group>"; };
 		1867743B1F2F6A4500FFA099 /* HQUserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQUserAccount.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 		180EB8D11F0D26D700C86ADE /* A */ = {
 			isa = PBXGroup;
 			children = (
+				1831B3941F545EE500239992 /* Cell */,
 				180EB8DD1F0D289D00C86ADE /* HQAViewController.swift */,
 			);
 			path = A;
@@ -234,6 +239,15 @@
 				18C87E201F319FDC00CB91EB /* HQPath.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1831B3941F545EE500239992 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1831B3951F545EF300239992 /* HQACell.swift */,
+				1831B3971F545F4F00239992 /* HQACellTopView.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		1859BD1D1F18C46300A6717D /* Network */ = {
@@ -467,6 +481,7 @@
 				182F4D1C1F1DFE54000EE8C5 /* HQStatus.swift in Sources */,
 				180EB8DE1F0D289D00C86ADE /* HQAViewController.swift in Sources */,
 				182F4D1A1F1D992E000EE8C5 /* HQNetWorkManager+Extension.swift in Sources */,
+				1831B3961F545EF300239992 /* HQACell.swift in Sources */,
 				18881D671F4596D90079F11E /* HQNewFeatureView.swift in Sources */,
 				18CD67AA1F0F693500C80A78 /* HQColor.swift in Sources */,
 				18CD67A41F0F5DC700C80A78 /* HQButton.swift in Sources */,
@@ -490,6 +505,7 @@
 				18FDF0181F26D68E00DEA265 /* HQCommon.swift in Sources */,
 				180EB8E41F0D28C300C86ADE /* HQDViewController.swift in Sources */,
 				180EB8BC1F0D1F4A00C86ADE /* AppDelegate.swift in Sources */,
+				1831B3981F545F4F00239992 /* HQACellTopView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

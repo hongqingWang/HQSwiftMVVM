@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate let cellId = "cellId"
+fileprivate let HQACellId = "HQACellId"
 
 class HQAViewController: HQBaseViewController {
     
@@ -46,8 +46,8 @@ extension HQAViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
+        let cell = tableView.dequeueReusableCell(withIdentifier: HQACellId, for: indexPath)
+//        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
         return cell
     }
 }
@@ -60,7 +60,9 @@ extension HQAViewController {
         super.setupTableView()
         
         navItem.leftBarButtonItem = UIBarButtonItem(hq_title: "好友", target: self, action: #selector(showFriends))
-        tableView?.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: cellId)
+        tableView?.register(HQACell.classForCoder(), forCellReuseIdentifier: HQACellId)
+        tableView?.estimatedRowHeight = 400
+        tableView?.rowHeight = UITableViewAutomaticDimension
         
         setupNavTitle()
     }

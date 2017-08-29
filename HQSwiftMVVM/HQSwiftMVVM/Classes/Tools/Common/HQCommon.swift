@@ -6,7 +6,7 @@
 //  Copyright © 2017年 王红庆. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - 全局通知定义
 /// 用户需要登录通知
@@ -14,6 +14,9 @@ let HQUserShouldLoginNotification = "HQUserShouldLoginNotification"
 /// 用户登录成功通知
 let HQUserLoginSuccessNotification = "HQUserLoginSuccessNotification"
 
+// MARK: - 常量
+/// 边距
+let margin: CGFloat = 16
 
 // MARK: - 接口
 /// 首页微博
