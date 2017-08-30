@@ -40,7 +40,7 @@ class HQStatusListViewModel {
         HQNetWorkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             guard let array = NSArray.yy_modelArray(with: HQStatus.classForCoder(), json: list ?? []) as? [HQStatus] else {
-                NSArray.yy_modelArray(with: <#T##AnyClass#>, json: <#T##Any#>)
+                
                 completion(isSuccess, false)
                 
                 return
