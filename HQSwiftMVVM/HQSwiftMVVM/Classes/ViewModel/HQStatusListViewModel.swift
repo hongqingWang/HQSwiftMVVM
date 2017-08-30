@@ -14,7 +14,8 @@ fileprivate let maxPullupTryTimes = 3
 /// 微博数据列表视图模型
 class HQStatusListViewModel {
     
-    lazy var statusList = [HQStatus]()
+    /// 微博视图模型的懒加载
+    lazy var statusList = [HQStatusViewModel]()
     
     /// 上拉刷新错误次数
     fileprivate var pullupErrorTimes = 0
@@ -33,31 +34,54 @@ class HQStatusListViewModel {
         }
         
         // 取出微博中已经加载的第一条微博(最新的一条微博)的`since_id`进行比较,对下拉刷新做处理
-        let since_id = pullup ? 0 : (statusList.first?.id ?? 0)
+        let since_id = pullup ? 0 : (statusList.first?.status.id ?? 0)
         // 上拉刷新,取出数组的最后一条微博`id`
-        let max_id = !pullup ? 0 : (statusList.last?.id ?? 0)
+        let max_id = !pullup ? 0 : (statusList.last?.status.id ?? 0)
         
         HQNetWorkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
-            guard let array = NSArray.yy_modelArray(with: HQStatus.classForCoder(), json: list ?? []) as? [HQStatus] else {
+            // 如果网络请求失败,直接执行完成回调
+            if !isSuccess {
                 
-                completion(isSuccess, false)
-                
+                completion(false, false)
                 return
             }
-            print("刷新到 \(array.count) 条数据 \(array)")
+            
+            /*
+             遍历字典数组,字典转模型
+             模型->视图模型
+             将视图模型添加到数组
+             */
+            var arrayM = [HQStatusViewModel]()
+            
+            for dict in list ?? [] {
+                
+                // 创建微博模型
+                let status = HQStatus()
+                
+                // 字典转模型
+                status.yy_modelSet(with: dict)
+                
+                // 使用`HQStatus`创建`HQStatusViewModel`
+                let viewModel = HQStatusViewModel(model: status)
+                
+                // 添加到数组
+                arrayM.append(viewModel)
+            }
+            
+            print("刷新到 \(arrayM.count) 条数据 \(arrayM)")
             
             // 拼接数据
             if pullup {
                 // 上拉刷新结束后,将数据拼接在数组的末尾
-                self.statusList += array
+                self.statusList += arrayM
                 
             } else {
                 // 下拉刷新结束后,将数据拼接在数组的最前面
-                self.statusList = array + self.statusList
+                self.statusList = arrayM + self.statusList
             }
             
-            if pullup && array.count == 0 {
+            if pullup && arrayM.count == 0 {
                 
                 self.pullupErrorTimes += 1
                 print("这是第 \(self.pullupErrorTimes) 次 加载到 0 条数据")

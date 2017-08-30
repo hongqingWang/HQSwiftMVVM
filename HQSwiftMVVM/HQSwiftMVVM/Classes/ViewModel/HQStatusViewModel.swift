@@ -8,11 +8,15 @@
 
 import Foundation
 
-class HQStatusViewModel {
+class HQStatusViewModel: CustomStringConvertible {
     
     var status: HQStatus
     
     init(model: HQStatus) {
         self.status = model
+    }
+    
+    var description: String {
+        return status.description
     }
 }

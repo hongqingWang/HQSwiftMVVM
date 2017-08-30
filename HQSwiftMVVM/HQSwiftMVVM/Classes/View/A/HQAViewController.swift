@@ -17,7 +17,7 @@ class HQAViewController: HQBaseViewController {
     /// 加载数据
     override func loadData() {
         listViewModel.loadStatus(pullup: self.isPullup) { (isSuccess, shouldRefresh) in
-            print("最后一条微博数据是 \(self.listViewModel.statusList.last?.text ?? "")")
+//            print("最后一条微博数据是 \(self.listViewModel.statusList.last?.text ?? "")")
             
             self.refreshControl?.endRefreshing()
             self.isPullup = false
@@ -47,7 +47,11 @@ extension HQAViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: HQACellId, for: indexPath) as! HQACell
-        cell.contentLabel.text = listViewModel.statusList[indexPath.row].text
+        
+        let viewModel = listViewModel.statusList[indexPath.row]
+        
+        cell.contentLabel.text = viewModel.status.text
+        
         return cell
     }
 }
