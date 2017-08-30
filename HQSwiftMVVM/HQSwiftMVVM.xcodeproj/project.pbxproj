@@ -38,6 +38,7 @@
 		18CD67A81F0F686C00C80A78 /* HQScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A71F0F686C00C80A78 /* HQScreen.swift */; };
 		18CD67AA1F0F693500C80A78 /* HQColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A91F0F693500C80A78 /* HQColor.swift */; };
 		18D649571F161AE40074D2D8 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D649561F161AE40074D2D8 /* main.json */; };
+		18ED740E1F5555D50016F746 /* HQUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED740D1F5555D50016F746 /* HQUser.swift */; };
 		18FDF0181F26D68E00DEA265 /* HQCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF0171F26D68E00DEA265 /* HQCommon.swift */; };
 		18FDF01B1F26E08F00DEA265 /* HQLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF01A1F26E08F00DEA265 /* HQLoginController.swift */; };
 		18FDF01D1F26EC3D00DEA265 /* HQTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF01C1F26EC3D00DEA265 /* HQTextField.swift */; };
@@ -78,6 +79,7 @@
 		18CD67A71F0F686C00C80A78 /* HQScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQScreen.swift; sourceTree = "<group>"; };
 		18CD67A91F0F693500C80A78 /* HQColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQColor.swift; sourceTree = "<group>"; };
 		18D649561F161AE40074D2D8 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		18ED740D1F5555D50016F746 /* HQUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQUser.swift; sourceTree = "<group>"; };
 		18FDF0171F26D68E00DEA265 /* HQCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQCommon.swift; sourceTree = "<group>"; };
 		18FDF01A1F26E08F00DEA265 /* HQLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQLoginController.swift; sourceTree = "<group>"; };
 		18FDF01C1F26EC3D00DEA265 /* HQTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQTextField.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				182F4D1B1F1DFE54000EE8C5 /* HQStatus.swift */,
+				18ED740D1F5555D50016F746 /* HQUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				180EB8E41F0D28C300C86ADE /* HQDViewController.swift in Sources */,
 				180EB8BC1F0D1F4A00C86ADE /* AppDelegate.swift in Sources */,
 				1831B3981F545F4F00239992 /* HQACellTopView.swift in Sources */,
+				18ED740E1F5555D50016F746 /* HQUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

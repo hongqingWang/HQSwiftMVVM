@@ -18,9 +18,11 @@ class HQStatus: NSObject {
      */
     /// 微博ID
     var id: Int64 = 0
-    
     /// 微博信息内容
     var text: String?
+    
+    /// 用户属性信息
+    var user: HQUser?
     
     override var description: String {
         

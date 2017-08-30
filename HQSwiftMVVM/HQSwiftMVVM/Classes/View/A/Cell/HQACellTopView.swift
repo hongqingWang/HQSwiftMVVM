@@ -18,7 +18,15 @@ class HQACellTopView: UIView {
     /// 头像
     fileprivate lazy var avatarImageView: UIImageView = UIImageView(hq_imageName: "avatar_default_big")
     /// 姓名
-    fileprivate lazy var nameLabel: UILabel = UILabel(hq_title: "王红庆", fontSize: 13, color: UIColor.hq_color(withHex: 0xFC3E00))
+    fileprivate lazy var nameLabel: UILabel = UILabel(hq_title: "吴彦祖", fontSize: 14, color: UIColor.hq_color(withHex: 0xFC3E00))
+    /// 会员
+    fileprivate lazy var memberIconView: UIImageView = UIImageView(hq_imageName: "common_icon_membership_level1")
+    /// 时间
+    fileprivate lazy var timeLabel: UILabel = UILabel(hq_title: "现在", fontSize: 11, color: UIColor.hq_color(withHex: 0xFF6C00))
+    /// 来源
+    fileprivate lazy var sourceLabel: UILabel = UILabel(hq_title: "来源", fontSize: 11, color: UIColor.hq_color(withHex: 0x828282))
+    /// 认证
+    fileprivate lazy var vipIconImageView: UIImageView = UIImageView(hq_imageName: "avatar_vip")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,9 +47,13 @@ extension HQACellTopView {
         addSubview(carveView)
         addSubview(avatarImageView)
         addSubview(nameLabel)
+        addSubview(memberIconView)
+        addSubview(timeLabel)
+        addSubview(sourceLabel)
+        addSubview(vipIconImageView)
         
         avatarImageView.snp.makeConstraints { (make) in
-            make.top.equalTo(carveView.snp.bottom)
+            make.top.equalTo(carveView.snp.bottom).offset(margin)
             make.left.equalTo(self).offset(margin)
             make.width.equalTo(AvatarImageViewWidth)
             make.height.equalTo(AvatarImageViewWidth)
@@ -49,6 +61,22 @@ extension HQACellTopView {
         nameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(avatarImageView).offset(4)
             make.left.equalTo(avatarImageView.snp.right).offset(margin - 4)
+        }
+        memberIconView.snp.makeConstraints { (make) in
+            make.left.equalTo(nameLabel.snp.right).offset(margin / 2)
+            make.centerY.equalTo(nameLabel)
+        }
+        timeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(nameLabel)
+            make.bottom.equalTo(avatarImageView)
+        }
+        sourceLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(timeLabel.snp.right).offset(margin / 2)
+            make.centerY.equalTo(timeLabel)
+        }
+        vipIconImageView.snp.makeConstraints { (make) in
+            make.centerX.equalTo(avatarImageView.snp.right)
+            make.centerY.equalTo(avatarImageView.snp.bottom)
         }
     }
 }

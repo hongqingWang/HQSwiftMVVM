@@ -46,8 +46,8 @@ extension HQAViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: HQACellId, for: indexPath)
-//        cell.textLabel?.text = listViewModel.statusList[indexPath.row].text
+        let cell = tableView.dequeueReusableCell(withIdentifier: HQACellId, for: indexPath) as! HQACell
+        cell.contentLabel.text = listViewModel.statusList[indexPath.row].text
         return cell
     }
 }
@@ -61,8 +61,9 @@ extension HQAViewController {
         
         navItem.leftBarButtonItem = UIBarButtonItem(hq_title: "好友", target: self, action: #selector(showFriends))
         tableView?.register(HQACell.classForCoder(), forCellReuseIdentifier: HQACellId)
-        tableView?.estimatedRowHeight = 400
         tableView?.rowHeight = UITableViewAutomaticDimension
+        tableView?.estimatedRowHeight = 400
+        tableView?.separatorStyle = .none
         
         setupNavTitle()
     }

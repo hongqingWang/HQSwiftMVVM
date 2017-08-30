@@ -40,12 +40,12 @@ class HQStatusListViewModel {
         HQNetWorkManager.shared.statusList(since_id: since_id, max_id: max_id) { (list, isSuccess) in
             
             guard let array = NSArray.yy_modelArray(with: HQStatus.classForCoder(), json: list ?? []) as? [HQStatus] else {
-                
+                NSArray.yy_modelArray(with: <#T##AnyClass#>, json: <#T##Any#>)
                 completion(isSuccess, false)
                 
                 return
             }
-            print("刷新到 \(array.count) 条数据")
+            print("刷新到 \(array.count) 条数据 \(array)")
             
             // 拼接数据
             if pullup {
