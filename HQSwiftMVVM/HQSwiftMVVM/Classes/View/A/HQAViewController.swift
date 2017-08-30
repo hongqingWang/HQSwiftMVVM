@@ -50,7 +50,7 @@ extension HQAViewController {
         
         let viewModel = listViewModel.statusList[indexPath.row]
         
-        cell.contentLabel.text = viewModel.status.text
+        cell.viewModel = viewModel
         
         return cell
     }

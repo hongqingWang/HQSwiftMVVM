@@ -13,10 +13,18 @@ let AvatarImageViewWidth: CGFloat = 35
 
 class HQACell: UITableViewCell {
 
+    var viewModel: HQStatusViewModel? {
+        didSet {
+            
+            contentLabel.text = viewModel?.status.text
+            topView.viewModel = viewModel
+        }
+    }
+    
     /// 顶部视图
     fileprivate lazy var topView: HQACellTopView = HQACellTopView()
     /// 正文
-    lazy var contentLabel: UILabel = UILabel(hq_title: "正文", fontSize: 15, color: UIColor.darkGray)
+    fileprivate lazy var contentLabel: UILabel = UILabel(hq_title: "正文", fontSize: 15, color: UIColor.darkGray)
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

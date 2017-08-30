@@ -10,6 +10,12 @@ import UIKit
 
 class HQACellTopView: UIView {
 
+    var viewModel: HQStatusViewModel? {
+        didSet {
+            nameLabel.text = viewModel?.status.user?.screen_name
+        }
+    }
+    
     fileprivate lazy var carveView: UIView = {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.hq_screenWidth(), height: 8))
         view.backgroundColor = UIColor.hq_color(withHex: 0xF2F2F2)
