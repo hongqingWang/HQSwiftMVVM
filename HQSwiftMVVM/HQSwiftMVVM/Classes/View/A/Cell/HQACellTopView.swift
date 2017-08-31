@@ -13,6 +13,7 @@ class HQACellTopView: UIView {
     var viewModel: HQStatusViewModel? {
         didSet {
             nameLabel.text = viewModel?.status.user?.screen_name
+            memberIconView.image = viewModel?.memberIcon
         }
     }
     
