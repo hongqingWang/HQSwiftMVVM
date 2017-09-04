@@ -111,6 +111,10 @@ extension UIImage {
          */
         UIGraphicsBeginImageContextWithOptions(rect.size, true, 0)
         
+        // 背景填充(在裁切之前做填充)
+        backColor.setFill()
+        UIRectFill(rect)
+        
         // 2.绘图'drawInRect'就是在指定区域内拉伸屏幕
         draw(in: rect)
         

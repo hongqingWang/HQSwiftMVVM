@@ -42,6 +42,8 @@ extension UIImageView {
             
             if isAvatar {
                 self?.image = image?.hq_avatarImage(size: self?.bounds.size)
+            } else {
+                self?.image = image?.hq_rectImage(size: self?.bounds.size)
             }
         }
     }

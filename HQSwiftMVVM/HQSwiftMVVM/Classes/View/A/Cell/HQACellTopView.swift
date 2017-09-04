@@ -12,8 +12,9 @@ class HQACellTopView: UIView {
 
     var viewModel: HQStatusViewModel? {
         didSet {
+            avatarImageView.hq_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
             nameLabel.text = viewModel?.status.user?.screen_name
-            memberIconView.image = viewModel?.memberIcon
+            memberIconView.image = viewModel?.memberIcon?.hq_rectImage(size: memberIconView.bounds.size)
             vipIconImageView.image = viewModel?.vipIcon
         }
     }
@@ -83,8 +84,8 @@ extension HQACellTopView {
             make.centerY.equalTo(timeLabel)
         }
         vipIconImageView.snp.makeConstraints { (make) in
-            make.centerX.equalTo(avatarImageView.snp.right)
-            make.centerY.equalTo(avatarImageView.snp.bottom)
+            make.centerX.equalTo(avatarImageView.snp.right).offset(-4)
+            make.centerY.equalTo(avatarImageView.snp.bottom).offset(-4)
         }
     }
 }
