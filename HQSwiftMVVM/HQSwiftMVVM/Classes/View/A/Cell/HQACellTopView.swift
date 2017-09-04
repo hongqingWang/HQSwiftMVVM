@@ -14,6 +14,7 @@ class HQACellTopView: UIView {
         didSet {
             nameLabel.text = viewModel?.status.user?.screen_name
             memberIconView.image = viewModel?.memberIcon
+            vipIconImageView.image = viewModel?.vipIcon
         }
     }
     
