@@ -14,7 +14,7 @@ class HQACellTopView: UIView {
         didSet {
             avatarImageView.hq_setImage(urlString: viewModel?.status.user?.profile_image_url, placeholderImage: UIImage(named: "avatar_default_big"), isAvatar: true)
             nameLabel.text = viewModel?.status.user?.screen_name
-            memberIconView.image = viewModel?.memberIcon?.hq_rectImage(size: memberIconView.bounds.size)
+            memberIconView.image = viewModel?.memberIcon?.hq_rectImage(size: CGSize(width: 17, height: 17))
             vipIconImageView.image = viewModel?.vipIcon
         }
     }
