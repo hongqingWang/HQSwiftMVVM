@@ -39,6 +39,7 @@
 		18CD67A81F0F686C00C80A78 /* HQScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A71F0F686C00C80A78 /* HQScreen.swift */; };
 		18CD67AA1F0F693500C80A78 /* HQColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CD67A91F0F693500C80A78 /* HQColor.swift */; };
 		18D649571F161AE40074D2D8 /* main.json in Resources */ = {isa = PBXBuildFile; fileRef = 18D649561F161AE40074D2D8 /* main.json */; };
+		18DFBF7F1F5D504200AFCA5E /* HQACellBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DFBF7E1F5D504200AFCA5E /* HQACellBottomView.swift */; };
 		18ED740E1F5555D50016F746 /* HQUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED740D1F5555D50016F746 /* HQUser.swift */; };
 		18FDF0181F26D68E00DEA265 /* HQCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF0171F26D68E00DEA265 /* HQCommon.swift */; };
 		18FDF01B1F26E08F00DEA265 /* HQLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18FDF01A1F26E08F00DEA265 /* HQLoginController.swift */; };
@@ -81,6 +82,7 @@
 		18CD67A71F0F686C00C80A78 /* HQScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQScreen.swift; sourceTree = "<group>"; };
 		18CD67A91F0F693500C80A78 /* HQColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQColor.swift; sourceTree = "<group>"; };
 		18D649561F161AE40074D2D8 /* main.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = main.json; sourceTree = "<group>"; };
+		18DFBF7E1F5D504200AFCA5E /* HQACellBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQACellBottomView.swift; sourceTree = "<group>"; };
 		18ED740D1F5555D50016F746 /* HQUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQUser.swift; sourceTree = "<group>"; };
 		18FDF0171F26D68E00DEA265 /* HQCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQCommon.swift; sourceTree = "<group>"; };
 		18FDF01A1F26E08F00DEA265 /* HQLoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HQLoginController.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				1831B3951F545EF300239992 /* HQACell.swift */,
 				1831B3971F545F4F00239992 /* HQACellTopView.swift */,
+				18DFBF7E1F5D504200AFCA5E /* HQACellBottomView.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				18C87E211F319FDC00CB91EB /* HQPath.swift in Sources */,
 				182F4D1E1F1E02B4000EE8C5 /* HQStatusListViewModel.swift in Sources */,
 				18CD67A81F0F686C00C80A78 /* HQScreen.swift in Sources */,
+				18DFBF7F1F5D504200AFCA5E /* HQACellBottomView.swift in Sources */,
 				18CD67821F0F198E00C80A78 /* HQDemoViewController.swift in Sources */,
 				180EB8DC1F0D27B800C86ADE /* HQBaseViewController.swift in Sources */,
 				180EB8E21F0D28B900C86ADE /* HQCViewController.swift in Sources */,

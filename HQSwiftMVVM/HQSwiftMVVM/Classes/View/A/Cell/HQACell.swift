@@ -25,6 +25,8 @@ class HQACell: UITableViewCell {
     fileprivate lazy var topView: HQACellTopView = HQACellTopView()
     /// 正文
     fileprivate lazy var contentLabel: UILabel = UILabel(hq_title: "正文", fontSize: 15, color: UIColor.darkGray)
+    /// 底部视图
+    fileprivate lazy var bottomView: HQACellBottomView = HQACellBottomView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -45,6 +47,7 @@ extension HQACell {
         
         addSubview(topView)
         addSubview(contentLabel)
+        addSubview(bottomView)
         
         topView.snp.makeConstraints { (make) in
             make.top.equalTo(self)
@@ -55,8 +58,14 @@ extension HQACell {
         contentLabel.snp.makeConstraints { (make) in
             make.top.equalTo(topView.snp.bottom).offset(margin / 2)
             make.left.equalTo(self).offset(margin)
-            make.right.equalTo(self).offset(0)
-            make.bottom.equalTo(self).offset(-margin / 2)
+            make.right.equalTo(self).offset(-8)
+        }
+        bottomView.snp.makeConstraints { (make) in
+            make.top.equalTo(contentLabel.snp.bottom).offset(margin)
+            make.left.equalTo(self)
+            make.right.equalTo(self)
+            make.height.equalTo(44)
+            make.bottom.equalTo(self)
         }
     }
 }

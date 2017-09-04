@@ -150,7 +150,27 @@ extension UIButton {
         
         setTitle(hq_title, for: .normal)
         setTitleColor(color, for: .normal)
-        setBackgroundImage(UIImage.init(named: backImageName), for: .normal)
+        setBackgroundImage(UIImage(named: backImageName), for: .normal)
+        
+        sizeToFit()
+    }
+    
+    /// 标题 + 字号 + 文字颜色 + 图片
+    ///
+    /// - Parameters:
+    ///   - hq_title: title
+    ///   - fontSize: fontSize
+    ///   - color: color
+    ///   - backImageName: backImageName
+    convenience init(hq_title: String, fontSize: CGFloat, color: UIColor, imageName: String, backImage: String) {
+        self.init()
+        
+        setTitle(hq_title, for: .normal)
+        titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        setTitleColor(color, for: .normal)
+        setImage(UIImage(named: imageName), for: .normal)
+        
+        setBackgroundImage(UIImage(named: backImage), for: .normal)
         
         sizeToFit()
     }
