@@ -24,6 +24,13 @@ class HQStatus: NSObject {
     /// 用户属性信息
     var user: HQUser?
     
+    /// 转发数
+    var reposts_count: Int = 0
+    /// 评论数
+    var comments_count: Int = 0
+    /// 表态数
+    var attitudes_count: Int = 0
+    
     override var description: String {
         
         return yy_modelDescription()

@@ -18,6 +18,7 @@ class HQACell: UITableViewCell {
             
             contentLabel.text = viewModel?.status.text
             topView.viewModel = viewModel
+            bottomView.viewModel = viewModel
         }
     }
     

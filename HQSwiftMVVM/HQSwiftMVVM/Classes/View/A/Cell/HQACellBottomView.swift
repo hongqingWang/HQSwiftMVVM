@@ -10,6 +10,14 @@ import UIKit
 
 class HQACellBottomView: UIView {
 
+    var viewModel: HQStatusViewModel? {
+        didSet {
+            retweetedButton.setTitle("\(viewModel?.status.reposts_count)", for: .normal)
+            commentButton.setTitle("\(viewModel?.status.comments_count)", for: .normal)
+            likeButton.setTitle("\(viewModel?.status.attitudes_count)", for: .normal)
+        }
+    }
+    
     /// 转发
     fileprivate lazy var retweetedButton: UIButton = UIButton(hq_title: " 转发", fontSize: 12, color: UIColor.darkGray, imageName: "timeline_icon_retweet", backImage: "timeline_card_bottom_background")
     /// 评论
