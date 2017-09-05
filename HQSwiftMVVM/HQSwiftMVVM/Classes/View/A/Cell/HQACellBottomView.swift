@@ -12,18 +12,18 @@ class HQACellBottomView: UIView {
 
     var viewModel: HQStatusViewModel? {
         didSet {
-            retweetedButton.setTitle("\(viewModel?.status.reposts_count)", for: .normal)
-            commentButton.setTitle("\(viewModel?.status.comments_count)", for: .normal)
-            likeButton.setTitle("\(viewModel?.status.attitudes_count)", for: .normal)
+            retweetedButton.setTitle(viewModel?.retweetString, for: .normal)
+            commentButton.setTitle(viewModel?.commentString, for: .normal)
+            likeButton.setTitle(viewModel?.likeSting, for: .normal)
         }
     }
     
     /// 转发
-    fileprivate lazy var retweetedButton: UIButton = UIButton(hq_title: " 转发", fontSize: 12, color: UIColor.darkGray, imageName: "timeline_icon_retweet", backImage: "timeline_card_bottom_background")
+    fileprivate lazy var retweetedButton: UIButton = UIButton(hq_title: " 转发", fontSize: 12, color: UIColor.darkGray, imageName: "timeline_icon_retweet", backImage: "timeline_card_bottom_background", titleEdge: 5)
     /// 评论
-    fileprivate lazy var commentButton: UIButton = UIButton(hq_title: " 评论", fontSize: 12, color: UIColor.darkGray, imageName: "timeline_icon_comment", backImage: "timeline_card_bottom_background")
+    fileprivate lazy var commentButton: UIButton = UIButton(hq_title: " 评论", fontSize: 12, color: UIColor.darkGray, imageName: "timeline_icon_comment", backImage: "timeline_card_bottom_background", titleEdge: 5)
     /// 赞
-    fileprivate lazy var likeButton: UIButton = UIButton(hq_title: " 赞", fontSize: 12, color: UIColor.darkGray, imageName: "timeline_icon_unlike", backImage: "timeline_card_bottom_background")
+    fileprivate lazy var likeButton: UIButton = UIButton(hq_title: " 赞", fontSize: 12, color: UIColor.darkGray, imageName: "timeline_icon_unlike", backImage: "timeline_card_bottom_background", titleEdge: 5)
     /// 分割线
     fileprivate lazy var sepView01: UIImageView = UIImageView(hq_imageName: "timeline_card_bottom_line_highlighted")
     /// 分割线

@@ -17,6 +17,13 @@ class HQStatusViewModel: CustomStringConvertible {
     /// 认证图标(-1:没有认证, 0:认证用户, 2,3,5:企业认证, 220:达人)
     var vipIcon: UIImage?
     
+    /// 转发
+    var retweetString: String?
+    /// 评论
+    var commentString: String?
+    /// 赞
+    var likeSting: String?
+    
     init(model: HQStatus) {
         self.status = model
         
@@ -37,9 +44,39 @@ class HQStatusViewModel: CustomStringConvertible {
         default:
             break
         }
+        // 测试数量超过`10000`的情况
+        model.reposts_count = Int(arc4random_uniform(100000))
+        // 转发、评论、赞
+        retweetString = countString(count: model.reposts_count, defaultString: "转发")
+        commentString = countString(count: model.comments_count, defaultString: "评论")
+        likeSting = countString(count: model.attitudes_count, defaultString: "赞")
     }
     
     var description: String {
         return status.description
+    }
+    
+    
+    /*
+     如果数量 == 0,    显示默认标题
+     如果数量 >= 10000,显示 x.xx 万
+     如果数量 < 10000, 显示实际数字
+     */
+    /// 给定一个数字,返回对应的描述结果
+    ///
+    /// - Parameters:
+    ///   - count: 数字
+    ///   - defaultString: 默认字符串(转发、评论、赞)
+    fileprivate func countString(count: Int, defaultString: String) -> String {
+        
+        if count == 0 {
+            return defaultString
+        }
+        
+        if count < 10000 {
+            return count.description
+        }
+        
+        return String(format: "%0.2f 万", CGFloat(count) / 10000)
     }
 }

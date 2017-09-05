@@ -155,14 +155,16 @@ extension UIButton {
         sizeToFit()
     }
     
-    /// 标题 + 字号 + 文字颜色 + 图片
+    /// 标题 + 字号 + 文字颜色 + 图片 + 背景图片
     ///
     /// - Parameters:
     ///   - hq_title: title
     ///   - fontSize: fontSize
     ///   - color: color
-    ///   - backImageName: backImageName
-    convenience init(hq_title: String, fontSize: CGFloat, color: UIColor, imageName: String, backImage: String) {
+    ///   - imageName: 图片
+    ///   - backImage: 背景图片
+    ///   - titleEdge: 图片和文字间距
+    convenience init(hq_title: String, fontSize: CGFloat, color: UIColor, imageName: String, backImage: String, titleEdge: CGFloat) {
         self.init()
         
         setTitle(hq_title, for: .normal)
@@ -171,6 +173,8 @@ extension UIButton {
         setImage(UIImage(named: imageName), for: .normal)
         
         setBackgroundImage(UIImage(named: backImage), for: .normal)
+        
+        titleEdgeInsets = UIEdgeInsetsMake(0, titleEdge, 0, -titleEdge)
         
         sizeToFit()
     }
