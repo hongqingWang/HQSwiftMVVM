@@ -45,7 +45,7 @@ class HQStatusViewModel: CustomStringConvertible {
             break
         }
         // 测试数量超过`10000`的情况
-        model.reposts_count = Int(arc4random_uniform(100000))
+//        model.reposts_count = Int(arc4random_uniform(100000))
         // 转发、评论、赞
         retweetString = countString(count: model.reposts_count, defaultString: "转发")
         commentString = countString(count: model.comments_count, defaultString: "评论")
