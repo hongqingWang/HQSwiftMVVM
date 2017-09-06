@@ -24,6 +24,9 @@ class HQStatusViewModel: CustomStringConvertible {
     /// 赞
     var likeSting: String?
     
+    /// 配图视图大小
+    var pictureViewSize: CGSize?
+    
     init(model: HQStatus) {
         self.status = model
         
@@ -50,6 +53,8 @@ class HQStatusViewModel: CustomStringConvertible {
         retweetString = countString(count: model.reposts_count, defaultString: "转发")
         commentString = countString(count: model.comments_count, defaultString: "评论")
         likeSting = countString(count: model.attitudes_count, defaultString: "赞")
+        
+        pictureViewSize = CGSize(width: 100, height: 200)
     }
     
     var description: String {

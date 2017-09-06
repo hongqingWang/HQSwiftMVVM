@@ -30,6 +30,11 @@ class HQStatus: NSObject {
     var comments_count: Int = 0
     /// 表态数
     var attitudes_count: Int = 0
+    /*
+     此处会崩溃
+     */
+    /// 微博配图模型数组
+    var pic_urls: [HQStatusPicture]?
     
     override var description: String {
         

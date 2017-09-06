@@ -132,6 +132,9 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
         _returnTypeEncoding = [NSString stringWithUTF8String:returnType];
         free(returnType);
     }
+    if ([_name hasPrefix:@"_swift_"]) {
+        return self;
+    }
     unsigned int argumentCount = method_getNumberOfArguments(method);
     if (argumentCount > 0) {
         NSMutableArray *argumentTypes = [NSMutableArray new];

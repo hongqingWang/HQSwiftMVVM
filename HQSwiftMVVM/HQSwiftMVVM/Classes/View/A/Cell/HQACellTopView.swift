@@ -63,7 +63,7 @@ extension HQACellTopView {
         
         avatarImageView.snp.makeConstraints { (make) in
             make.top.equalTo(carveView.snp.bottom).offset(margin)
-            make.left.equalTo(self).offset(margin)
+            make.left.equalTo(self).offset(12)
             make.width.equalTo(AvatarImageViewWidth)
             make.height.equalTo(AvatarImageViewWidth)
         }

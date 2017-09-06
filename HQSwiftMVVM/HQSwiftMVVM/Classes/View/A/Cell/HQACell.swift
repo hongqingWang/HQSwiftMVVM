@@ -20,8 +20,11 @@ class HQACell: UITableViewCell {
             contentLabel.text = viewModel?.status.text
             bottomView.viewModel = viewModel
             
+            var height: CGFloat = 0
+            height = viewModel?.pictureViewSize?.height ?? 0
+            
             pictureView.snp.updateConstraints { (make) in
-                make.height.equalTo(10)
+                make.height.equalTo(height)
             }
         }
     }
