@@ -54,13 +54,22 @@ class HQStatusViewModel: CustomStringConvertible {
         commentString = countString(count: model.comments_count, defaultString: "评论")
         likeSting = countString(count: model.attitudes_count, defaultString: "赞")
         
-        pictureViewSize = CGSize(width: 100, height: 200)
+        // 自定义配图视图的尺寸
+        pictureViewSize = calculatePictureViewSize(count: model.pic_urls?.count)
     }
     
     var description: String {
         return status.description
     }
     
+    /// 计算指定配图数量对应的配图视图的大小
+    ///
+    /// - Parameter count: 配图数量
+    /// - Returns: 配图视图的大小
+    fileprivate func calculatePictureViewSize(count: Int?) -> CGSize {
+        
+        return CGSize(width: 100, height: 100)
+    }
     
     /*
      如果数量 == 0,    显示默认标题
@@ -72,6 +81,7 @@ class HQStatusViewModel: CustomStringConvertible {
     /// - Parameters:
     ///   - count: 数字
     ///   - defaultString: 默认字符串(转发、评论、赞)
+    /// - Returns: 描述结果
     fileprivate func countString(count: Int, defaultString: String) -> String {
         
         if count == 0 {
