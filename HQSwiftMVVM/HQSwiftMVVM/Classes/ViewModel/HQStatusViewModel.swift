@@ -68,7 +68,25 @@ class HQStatusViewModel: CustomStringConvertible {
     /// - Returns: 配图视图的大小
     fileprivate func calculatePictureViewSize(count: Int?) -> CGSize {
         
-        return CGSize(width: 100, height: 100)
+        if count == 0 || count == nil {
+            return CGSize()
+        }
+        
+        /// 计算配图视图高度
+        // 根据`count`计算行数`1~9`
+        /*
+         1 2 3 (-1)-> 0 1 2 (/3)-> 0 (+1)-> 1
+         4 5 6 (-1)-> 3 4 5 (/3)-> 1 (+1)-> 2
+         7 8 9 (-1)-> 6 7 8 (/3)-> 2 (+1)-> 3
+         */
+        let row = (count! - 1) / 3 + 1
+        
+        // 根据行数算高度
+        var height = HQStatusPictureViewOutterMargin
+        height += CGFloat(row) * HQStatusPictureItemWidth
+        height += CGFloat(row - 1) * HQStatusPictureViewInnerMargin
+        
+        return CGSize(width: HQStatusPictureViewWidth, height: height)
     }
     
     /*

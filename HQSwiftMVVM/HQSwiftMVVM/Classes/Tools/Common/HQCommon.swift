@@ -23,3 +23,13 @@ let margin: CGFloat = 16
 let HQHomeUrlString = "https://api.weibo.com/2/statuses/home_timeline.json"
 /// 个人信息
 let HQUserInfoUrlString = "https://api.weibo.com/2/users/show.json"
+
+// MARK: - 微博配图视图常量
+// 配图视图的外侧间距
+let HQStatusPictureViewOutterMargin: CGFloat = 12
+// 配图视图的内侧间距
+let HQStatusPictureViewInnerMargin: CGFloat = 3
+// 视图的宽度
+let HQStatusPictureViewWidth: CGFloat = UIScreen.hq_screenWidth() - 2 * HQStatusPictureViewOutterMargin
+// 每个`Item`默认宽度
+let HQStatusPictureItemWidth: CGFloat = (HQStatusPictureViewWidth - 2 * HQStatusPictureViewInnerMargin) / 3
