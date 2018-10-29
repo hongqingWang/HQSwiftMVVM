@@ -21,7 +21,14 @@ class HQBaseViewController: UIViewController {
     var isPullup = false
     
     /// 自定义导航条
-    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.hq_screenWidth(), height: 64))
+//    lazy var navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.hq_screenWidth(), height: 64))
+    
+    /**
+     * 配置 NavgationBar
+     */
+    let navigationBar = UINavigationBar()
+    let navigationBarContainerView = UIView()
+    
     /// 自定义导航条目 - 以后设置导航栏内容,统一使用`navItem`
     lazy var navItem = UINavigationItem()
     
@@ -110,6 +117,27 @@ extension HQBaseViewController {
         
         tableView = UITableView(frame: view.bounds, style: .plain)
         view.insertSubview(tableView!, belowSubview: navigationBar)
+//        view.insertSubview(tableView!, belowSubview: navigationBarContainerView)
+//        navigationBarContainerView.addSubview(navigationBar)
+        
+        /**
+         * 配置 NavgationBar
+         */
+//        navigationBarContainerView.snp.makeConstraints { make in
+//            make.top.leading.trailing.equalToSuperview()
+//        }
+        navigationBar.snp.makeConstraints { make in
+            // iOS 11 and SnapKit 4.0
+            if #available(iOS 11.0, *) {
+                make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
+            } else {
+                // Fallback on earlier versions
+            }
+            // iOS 10，如果没有升级 SnapKit 的话，可以使用 topLayoutGuide
+            make.top.equalTo(self.topLayoutGuide.snp.bottom)
+    
+            make.leading.trailing.equalToSuperview()
+        }
         
         // 设置数据源和代理,子类可以直接实现数据源方法
         tableView?.dataSource = self
