@@ -254,11 +254,11 @@ extension HQMainViewController {
         vc.tabBarItem.selectedImage = UIImage(named: "tabbar_" + imageName + "_selected")?.withRenderingMode(.alwaysOriginal)
         // 设置`tabBar`标题颜色
         vc.tabBarItem.setTitleTextAttributes(
-            [NSForegroundColorAttributeName: UIColor.orange],
+            [NSAttributedStringKey.foregroundColor: UIColor.orange],
             for: .selected)
         // 设置`tabBar`标题字体大小,系统默认是`12`号字
         vc.tabBarItem.setTitleTextAttributes(
-            [NSFontAttributeName: UIFont.systemFont(ofSize: 12)],
+            [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12)],
             for: .normal)
         
         let nav = HQNavigationController(rootViewController: vc)

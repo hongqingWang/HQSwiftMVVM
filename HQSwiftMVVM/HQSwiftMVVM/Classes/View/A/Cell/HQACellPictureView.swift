@@ -10,6 +10,35 @@ import UIKit
 
 class HQACellPictureView: UIView {
     
+    /// 配图视图的数组
+    var urls: [HQStatusPicture]? {
+        didSet {
+            
+            // 隐藏所有的`ImageView`
+            for v in subviews {
+                v.isHidden = true
+            }
+            
+            // 遍历`urls`数组,顺序设置图像
+            var index = 0
+            
+            
+//            for url in urls ?? [] {
+//                
+//                // 获得对应索引的`ImageView`
+//                let iv = subviews[index] as! UIImageView
+//                
+//                // 设置图像
+////                iv.hq_setImage(urlString: url.thumbnail_pic, placeholderImage: nil)
+////                
+////                // 显示图像
+////                iv.isHidden = false
+//                
+//                index += 1
+//            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

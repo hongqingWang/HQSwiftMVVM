@@ -62,6 +62,18 @@ class HQStatusListViewModel {
                 // 字典转模型
                 status.yy_modelSet(with: dict)
                 
+                /********** 测试改变一下YYModel产生的问题 **********/
+                
+                /// 缩略图地址
+//                var thumbnail_pic: String?
+//                var pic_urls: [String : AnyObject]?
+                
+//                pic_urls = dict["pic_urls"] as! [String : AnyObject]
+                
+//                print("---\(pic_urls)")
+                
+                /********** 测试改变一下YYModel产生的问题 **********/
+                
                 // 使用`HQStatus`创建`HQStatusViewModel`
                 let viewModel = HQStatusViewModel(model: status)
                 

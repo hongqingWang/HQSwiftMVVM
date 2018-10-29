@@ -55,7 +55,7 @@ class HQStatusViewModel: CustomStringConvertible {
         likeSting = countString(count: model.attitudes_count, defaultString: "赞")
         
         // 自定义配图视图的尺寸
-        pictureViewSize = calculatePictureViewSize(count: model.pic_urls?.count)
+//        pictureViewSize = calculatePictureViewSize(count: model.pic_urls?.count)
     }
     
     var description: String {

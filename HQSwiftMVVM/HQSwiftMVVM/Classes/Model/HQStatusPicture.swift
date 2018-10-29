@@ -11,6 +11,7 @@ import UIKit
 /// 微博配图模型
 class HQStatusPicture: NSObject {
 
+    
     /// 缩略图地址
     var thumbnail_pic: String?
     
@@ -24,7 +25,7 @@ class HQStatusPicture: NSObject {
      OC 中的泛型是 Swift 推出后,苹果为了兼容给 OC 增加的
      从运行时的角度,仍然不知道数组中应该存放什么类型的对象
      */
-    class func modelContainerPropertyGenericClass() -> [String : AnyClass] {
+    class func modelContainerPropertyGenericClass() -> [String : AnyObject] {
         return ["pic_urls" : HQStatusPicture.classForCoder()]
     }
 }

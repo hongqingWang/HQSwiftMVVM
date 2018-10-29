@@ -26,6 +26,8 @@ class HQACell: UITableViewCell {
             pictureView.snp.updateConstraints { (make) in
                 make.height.equalTo(height)
             }
+//            print("aaa===\(viewModel?.status.pic_urls)")
+//            pictureView.urls = viewModel?.status.pic_urls
         }
     }
     

@@ -52,7 +52,7 @@ class HQBaseViewController: UIViewController {
     }
     
     /// 加载数据,具体的实现由子类负责
-    func loadData() {
+    @objc func loadData() {
         // 如果子类不实现任何方法,默认关闭刷新控件
         refreshControl?.endRefreshing()
     }
@@ -147,7 +147,7 @@ extension HQBaseViewController {
         // 设置`navigationBar`的渲染颜色
         navigationBar.barTintColor = UIColor.hq_color(withHex: 0xF6F6F6)
         // 设置导航栏`title`的颜色
-        navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.darkGray]
+        navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.darkGray]
         // 设置系统`leftBarButtonItem`渲染颜色
         navigationBar.tintColor = UIColor.orange
     }

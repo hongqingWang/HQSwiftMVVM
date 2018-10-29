@@ -61,9 +61,9 @@ extension UILabel {
         // 调整行间距
         paragraphStyle.lineSpacing = lineSpace
         
-        let rang = NSMakeRange(0, CFStringGetLength(string as CFString!))
+        let rang = NSMakeRange(0, CFStringGetLength(string as CFString?))
         
-        attributedString .addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: rang)
+        attributedString .addAttribute(NSAttributedStringKey.paragraphStyle, value: paragraphStyle, range: rang)
         
         return attributedString
     }
